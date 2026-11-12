@@ -1,0 +1,161 @@
+name: Beyond Words video
+
+# Owner 2026-11-12: 1 long story video + 4 Shorts EVERY day on YouTube, Facebook and Instagram, fully in the cloud.
+# GitHub starts scheduled jobs 30-60 min late, so every cron is set ~45 min early. Pause switch = repo variable AUTO_POST.
+on:
+  schedule:
+    - cron: '15 0 * * *'    # 05:45 IST: free AI quota just reset → story/voice/images
+    - cron: '15 6 * * *'    # continue (images, render, Shorts, queue to Drive)
+    - cron: '15 12 * * *'   # continue
+    - cron: '15 18 * * *'   # continue
+    - cron: '40 12 * * *'   # ≈ 7 PM IST: publish today's long video (YouTube + Facebook)
+    - cron: '45 2 * * *'    # ≈ 9 AM IST: Short 1 (+ Stories)
+    - cron: '45 6 * * *'    # ≈ 1 PM IST: Short 2
+    - cron: '45 10 * * *'   # ≈ 5 PM IST: Short 3
+    - cron: '45 14 * * *'   # ≈ 9 PM IST: Short 4
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Own story idea for a NEW video (empty = trend research picks one)'
+        required: false
+      dry:
+        description: 'Dry run (make everything, do not queue to Drive)'
+        type: boolean
+        default: true
+      mode:
+        description: 'make = build the next video; publish = post the oldest long video now; short = post the next Short now'
+        type: choice
+        options: [make, publish, short]
+        default: make
+
+permissions:
+  contents: write
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    concurrency: { group: make, cancel-in-progress: false }
+    if: (github.event_name == 'workflow_dispatch' && inputs.mode == 'make') || (github.event_name == 'schedule' && startsWith(github.event.schedule, '15 ') && vars.AUTO_POST == 'on')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy faster-whisper
+          ffmpeg -version | head -1
+          which google-chrome
+      - name: Whisper model cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small
+      - name: Restore work in progress
+        uses: actions/cache/restore@v4
+        with:
+          path: runs
+          key: runs-${{ github.run_id }}
+          restore-keys: runs-
+      - name: Secrets
+        env:
+          ENV_FILE: ${{ secrets.ENV_FILE }}
+        run: printf '%s\n' "$ENV_FILE" | tr -d '\r' > .env
+      - name: Pipeline
+        env:
+          TOPIC: ${{ inputs.topic }}
+          DRY: ${{ github.event_name == 'workflow_dispatch' && inputs.dry }}
+          CHROME_PATH: /usr/bin/google-chrome
+        run: |
+          set -- run
+          [ "$DRY" = "true" ] && set -- "$@" --dry
+          [ -n "$TOPIC" ] && set -- "$@" --topic "$TOPIC"
+          node scripts/pipeline.js "$@"
+      - name: Save work in progress
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: runs
+          key: runs-${{ github.run_id }}
+      - name: Keep the finished video (7 days)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ github.run_id }}
+          path: |
+            runs/*/final.mp4
+            runs/*/short*.mp4
+            runs/*/thumb.jpg
+            runs/*/script.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Commit state
+        if: always()
+        run: |
+          rm -f .env
+          bash scripts/commit_state.sh "state: video run ${{ github.run_id }}"
+
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency: { group: publish, cancel-in-progress: false }
+    if: (github.event_name == 'workflow_dispatch' && inputs.mode == 'publish') || (github.event_name == 'schedule' && github.event.schedule == '40 12 * * *' && vars.AUTO_POST == 'on')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - name: Publish the oldest ready long video (YouTube + Facebook) + Drive cleanup
+        env:
+          ENV_FILE: ${{ secrets.ENV_FILE }}
+        run: |
+          printf '%s\n' "$ENV_FILE" | tr -d '\r' > .env
+          node scripts/publish.js --force
+          rm -f .env
+      - name: Commit state
+        if: always()
+        run: |
+          bash scripts/commit_state.sh "state: publish run ${{ github.run_id }}"
+
+  short:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency: { group: publish, cancel-in-progress: false }
+    if: (github.event_name == 'workflow_dispatch' && inputs.mode == 'short') || (github.event_name == 'schedule' && startsWith(github.event.schedule, '45 ') && vars.AUTO_POST == 'on')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Post the next Short (YouTube Short + Facebook Reel + Instagram Reel)
+        env:
+          ENV_FILE: ${{ secrets.ENV_FILE }}
+        run: |
+          printf '%s\n' "$ENV_FILE" | tr -d '\r' > .env
+          node scripts/publish_shorts.js
+          rm -f .env
+
+  tune:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' && github.event.schedule == '15 0 * * *' && vars.AUTO_POST == 'on'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Weekly analysis (Sundays)
+        env:
+          ENV_FILE: ${{ secrets.ENV_FILE }}
+        run: |
+          if [ "$(date -u +%u)" != "7" ]; then echo "not Sunday"; exit 0; fi
+          printf '%s\n' "$ENV_FILE" | tr -d '\r' > .env
+          node scripts/tune.js
+          rm -f .env
+          bash scripts/commit_state.sh "state: weekly analysis"
