@@ -69,7 +69,7 @@ async function instagramOnce(file, caption) {
   const c = await call(`${GRAPH}/${ig}/media`, { method: 'POST', headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ media_type: 'REELS', upload_type: 'resumable', caption: caption.slice(0, 2200), share_to_feed: true, thumb_offset: 500, access_token: tok }) });
   if (!c.body.id) throw new Error('IG container failed: ' + JSON.stringify(c.body).slice(0, 300));
-  const up = await call(`https://rupload.facebook.com/ig-api-upload/v26.0/${c.body.id}`, { method: 'POST', body: fs.readFileSync(file),
+  const up = await call(c.body.uri || `https://rupload.facebook.com/ig-api-upload/v27.0/${c.body.id}`, { method: 'POST', body: fs.readFileSync(file),
     headers: { authorization: 'OAuth ' + tok, offset: '0', file_size: String(fs.statSync(file).size) } }, 600000);
   if (!up.body.success) throw new Error('IG upload failed: ' + JSON.stringify(up.body).slice(0, 300));
   let st = '';
@@ -114,7 +114,7 @@ export async function publishInstagramStory(file) {
   const c = await call(`${GRAPH}/${ig}/media`, { method: 'POST', headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ media_type: 'STORIES', upload_type: 'resumable', access_token: tok }) });
   if (!c.body.id) throw new Error('IG story container failed: ' + JSON.stringify(c.body).slice(0, 300));
-  const up = await call(`https://rupload.facebook.com/ig-api-upload/v26.0/${c.body.id}`, { method: 'POST', body: fs.readFileSync(file),
+  const up = await call(c.body.uri || `https://rupload.facebook.com/ig-api-upload/v27.0/${c.body.id}`, { method: 'POST', body: fs.readFileSync(file),
     headers: { authorization: 'OAuth ' + tok, offset: '0', file_size: String(fs.statSync(file).size) } }, 600000);
   if (!up.body.success) throw new Error('IG story upload failed: ' + JSON.stringify(up.body).slice(0, 300));
   let st = '';
