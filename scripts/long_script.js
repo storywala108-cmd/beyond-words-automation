@@ -67,7 +67,9 @@ async function writeChapter(topic, plan, i, prevTail) {
   const ask = `${NARRATOR}\n\nStory bible + plan: ${JSON.stringify(plan)}\n` +
     `Write ${what} in Hindi — about ${target} words, ${Math.max(3, Math.round(target / 25))} scenes. ` +
     `About one scene in three should be a "ui" motion graphic where the story naturally has a phone message, call, ` +
-    `bank amount, the हिसाब note, a document or a line worth showing big (for those, "prompt" can be empty). ` +
+    `bank amount, the हिसाब note, a document or a line worth showing big (for those, "prompt" can be empty). Vary ` +
+    `them: WhatsApp / call / bank / doc / text first; the "note" at most ONCE per chapter, only right after a ` +
+    `betrayal, each note line under 12 words ("मौसी – माँ को दुकान के बाहर बीस मिनट खड़ा रखा।"). ` +
     `Picture scenes must name the characters exactly as in the bible. ` +
     (prevTail ? `It continues right after: "${prevTail}". Flow on naturally, don't recap. ` : '') +
     (isLast ? `This is the final chapter: land the ending (${plan.ending}), then one short warm line asking viewers ` +

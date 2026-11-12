@@ -58,7 +58,7 @@ server.listen(0, '127.0.0.1', () => {
   const redirect = `http://127.0.0.1:${server.address().port}`;
   const auth = 'https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
     client_id: env.YT_CLIENT_ID, redirect_uri: redirect, response_type: 'code',
-    scope: SCOPES, access_type: 'offline', prompt: 'consent', login_hint: 'storywala108@gmail.com',
+    scope: SCOPES, access_type: 'offline', prompt: 'consent', login_hint: env.GOOGLE_LOGIN_HINT || 'rahulsharmak023@gmail.com',
   });
   console.log('AUTH_URL ' + auth);
 });

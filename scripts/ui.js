@@ -22,7 +22,7 @@ const clamp = (a, n) => (Array.isArray(a) ? a : []).filter(Boolean).slice(-n);
 
 const BASE = `*{margin:0;box-sizing:border-box}html,body{width:1920px;height:1080px;overflow:hidden;background:transparent}
 body{font-family:N,M,sans-serif;color:#111}
-.phone{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:560px;height:980px;border-radius:64px;
+.phone{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) scale(0.86);width:560px;height:980px;border-radius:64px;
 background:#0d0d0f;padding:18px;box-shadow:0 40px 120px rgba(0,0,0,.65),0 0 0 3px #2c2c30}
 .scr{width:100%;height:100%;border-radius:48px;overflow:hidden;position:relative;display:flex;flex-direction:column}
 .bar{height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 34px;font:600 22px N;color:#fff}`;
@@ -80,10 +80,12 @@ background:#0b141a radial-gradient(circle at 20% 30%,#10202a 0,transparent 40%)}
     return [pageFor('₹ • • • • • •'), pageFor(esc(u.amount || '₹0'))];
   },
   note(u) {
-    const lines = clamp(u.lines, 6);
-    const css = `.scr{background:#fffdf4}.hd{padding:26px 30px 10px;font:800 46px T;color:#7a1f1f;border-bottom:2px solid #f0e2c0}
-.ls{padding:14px 30px;display:flex;flex-direction:column;gap:16px}
-.l{font:500 25px/1.42 N;color:#2b2b2b;padding-left:22px;position:relative}.l:before{content:'•';position:absolute;left:0;color:#b33}
+    // short, readable lines: the newest 4, each cut at ~70 characters on a word boundary
+    const short = l => { const s = String(l).trim(); if (s.length <= 72) return s; const c = s.slice(0, 70); return c.slice(0, c.lastIndexOf(' ') > 40 ? c.lastIndexOf(' ') : 70) + '…'; };
+    const lines = clamp(u.lines, 4).map(short);
+    const css = `.scr{background:#fffdf4}.hd{padding:26px 30px 10px;font:800 50px T;color:#7a1f1f;border-bottom:2px solid #f0e2c0}
+.ls{padding:18px 30px;display:flex;flex-direction:column;gap:20px}
+.l{font:600 31px/1.4 N;color:#2b2b2b;padding-left:24px;position:relative}.l:before{content:'•';position:absolute;left:0;color:#b33}
 .nw{background:#fff2b8;border-radius:8px;padding:6px 10px 6px 28px;font-weight:600}`;
     const pageFor = n => page(`<div class="phone"><div class="scr"><div class="bar" style="color:#555"><span>9:41</span><span>Notes</span></div>
 <div class="hd">${esc(u.title || 'हिसाब')}</div><div class="ls">${lines.slice(0, n).map((l, i) => `<div class="l ${i === n - 1 && n === lines.length ? 'nw' : ''}">${esc(l)}</div>`).join('')}</div></div></div>`, css);

@@ -8,3 +8,6 @@ logs/
 *.cmd
 STATUS.html
 brand/src/_*
+status.mjs
+status_steps.json
+preview/

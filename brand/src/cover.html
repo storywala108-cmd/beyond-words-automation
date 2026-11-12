@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Tiro+Devanagari+Hindi&family=Mukta:wght@700&display=block" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+html,body{background:#0b1130;overflow:hidden}
+.c{position:relative;overflow:hidden}
+.bg{position:absolute;inset:0;background:url(../bg_cover.jpg) center/cover;filter:saturate(.9) brightness(.85)}
+.shade{position:absolute;inset:0}
+.t{position:absolute;text-align:center}
+.b{font-family:'Great Vibes';color:#f4ead2;line-height:.9;text-shadow:0 4px 24px rgba(0,0,0,.8)}
+.w{font-family:Cinzel;font-weight:700;letter-spacing:.08em;line-height:1;
+  background:linear-gradient(135deg,#fbe39b,#d6a843 50%,#97691a);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 14px rgba(0,0,0,.85))}
+.rule{height:4px;margin:0 auto;background:linear-gradient(90deg,transparent,#d6a843,transparent)}
+.h{font-family:'Tiro Devanagari Hindi';color:#f3e9d2;text-shadow:0 3px 12px rgba(0,0,0,.9)}
+.s{font-family:Mukta;font-weight:700;color:#d6a843;text-shadow:0 2px 10px rgba(0,0,0,.9)}
+/* YouTube banner 2560x1440, text inside the 1546x423 safe area (507-930) */
+#yt{width:2560px;height:1440px}
+#yt .shade{background:radial-gradient(ellipse 60% 45% at 50% 50%,rgba(11,17,48,.82),rgba(11,17,48,.35) 70%,rgba(11,17,48,.6))}
+#yt .t{left:507px;width:1546px;top:520px}
+#yt .b{font-size:150px}#yt .w{font-size:132px;margin-top:-6px}#yt .rule{width:900px;margin-top:18px}
+#yt .h{font-size:58px;margin-top:16px}#yt .s{font-size:38px;margin-top:8px}
+/* Facebook cover 1640x856; text kept in the middle band that mobile also shows */
+#fb{width:1640px;height:856px}
+#fb .shade{background:linear-gradient(90deg,rgba(11,17,48,.15),rgba(11,17,48,.55) 45%,rgba(11,17,48,.88) 75%)}
+#fb .t{right:90px;width:760px;top:230px}
+#fb .b{font-size:120px}#fb .w{font-size:104px}#fb .rule{width:600px;margin-top:14px}
+#fb .h{font-size:48px;margin-top:14px}#fb .s{font-size:32px;margin-top:6px}
+.o{display:none}
+</style></head><body>
+<div class="c o" id="yt"><div class="bg"></div><div class="shade"></div>
+ <div class="t"><div class="b">Beyond</div><div class="w">WORDS</div><div class="rule"></div>
+ <div class="h">हर कहानी में एक हिसाब</div><div class="s">रोज़ एक नई कहानी · हर शाम 7 बजे</div></div></div>
+<div class="c o" id="fb"><div class="bg"></div><div class="shade"></div>
+ <div class="t"><div class="b">Beyond</div><div class="w">WORDS</div><div class="rule"></div>
+ <div class="h">हर कहानी में एक हिसाब</div><div class="s">परिवार · पैसा · धोखा · इंसाफ़</div></div></div>
+<script>document.getElementById((location.hash||'#yt').slice(1)).style.display='block'</script>
+</body></html>
