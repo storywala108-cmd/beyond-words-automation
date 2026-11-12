@@ -22,7 +22,7 @@ const clamp = (a, n) => (Array.isArray(a) ? a : []).filter(Boolean).slice(-n);
 
 const BASE = `*{margin:0;box-sizing:border-box}html,body{width:1920px;height:1080px;overflow:hidden;background:transparent}
 body{font-family:N,M,sans-serif;color:#111}
-.phone{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) scale(0.86);width:560px;height:980px;border-radius:64px;
+.phone{position:absolute;left:50%;top:41%;transform:translate(-50%,-50%) scale(0.78);width:560px;height:980px;border-radius:64px;
 background:#0d0d0f;padding:18px;box-shadow:0 40px 120px rgba(0,0,0,.65),0 0 0 3px #2c2c30}
 .scr{width:100%;height:100%;border-radius:48px;overflow:hidden;position:relative;display:flex;flex-direction:column}
 .bar{height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 34px;font:600 22px N;color:#fff}`;

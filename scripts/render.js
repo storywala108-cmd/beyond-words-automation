@@ -19,7 +19,7 @@ const SUBS = String(process.env.SUBTITLES ?? 'true') !== 'false';
 const assTime = t => { const cs = Math.max(0, Math.round(t * 100)); return `${Math.floor(cs / 360000)}:${String(Math.floor(cs / 6000) % 60).padStart(2, '0')}:${String(Math.floor(cs / 100) % 60).padStart(2, '0')}.${String(cs % 100).padStart(2, '0')}`; };
 const assText = t => String(t).replace(/[{}\\]/g, '').replace(/\n/g, ' ');
 function writeAss(file, scenes, starts) {
-  const ev = [];
+  const ev = [], subs = [];
   scenes.forEach((sc, i) => {
     if (sc.chapterTitle) ev.push(`Dialogue: 1,${assTime(sc.start + 0.3)},${assTime(sc.start + 4.2)},Chapter,,0,0,0,,{\\fad(500,500)}${assText(sc.chapterTitle)}`);
     if (!SUBS || sc.ui?.type === 'text') return;   // big on-screen text already says it
@@ -31,14 +31,18 @@ function writeAss(file, scenes, starts) {
     let t = starts[i];
     for (const c of chunks) {
       const d = sc.vo * c.length / total;
-      ev.push(`Dialogue: 0,${assTime(t)},${assTime(t + d)},Sub,,0,0,0,,${assText(c)}`);
+      subs.push({ s: t, e: t + d, text: assText(c) });
       t += d;
     }
   });
+  // owner 2026-11-13: on-screen text must never overlap → one subtitle at a time (each ends before the next starts)
+  subs.sort((a, b) => a.s - b.s);
+  subs.forEach((x, k) => { if (subs[k + 1]) x.e = Math.min(x.e, subs[k + 1].s - 0.02); });
+  for (const x of subs) if (x.e - x.s > 0.05) ev.push(`Dialogue: 0,${assTime(x.s)},${assTime(x.e)},Sub,,0,0,0,,${x.text}`);
   fs.writeFileSync(file, `[Script Info]\nScriptType: v4.00+\nPlayResX: ${W}\nPlayResY: ${H}\nWrapStyle: 0\n\n` +
     `[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n` +
     `Style: Sub,Mukta ExtraBold,62,&H0000D8FF,&H0000D8FF,&H00000000,&H96000000,0,0,0,0,100,100,0,0,1,4,2,2,120,120,60,1\n` +
-    `Style: Chapter,Tiro Devanagari Hindi,84,&H00D6F3FF,&H00D6F3FF,&H00101A2A,&HA0101020,0,0,0,0,100,100,0,0,3,18,0,5,100,100,0,1\n\n` +
+    `Style: Chapter,Tiro Devanagari Hindi,64,&H00D6F3FF,&H00D6F3FF,&H00101A2A,&HA0101020,0,0,0,0,100,100,0,0,3,16,0,7,70,1240,60,1\n\n` +
     `[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n${ev.join('\n')}\n`);
 }
 

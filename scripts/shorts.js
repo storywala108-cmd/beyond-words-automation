@@ -45,14 +45,18 @@ export async function makeShorts(dir, script, scenes, count = 4) {
     const start = scenes[a].start, dur = Math.min(MAX, scenes[b].start + scenes[b].vo + 0.6 - start);
     if (dur < MIN) { log(`short ${k + 1} skipped: only ${dur.toFixed(0)} s`); continue; }
     // captions: each scene's words in chunks of 4, spread over that scene's spoken time
-    const ev = [];
+    const ev = [], caps = [];
     for (let i = a; i <= b; i++) {
       const words = scenes[i].text.split(/\s+/).filter(Boolean), chunks = [];
       for (let w = 0; w < words.length; w += 4) chunks.push(words.slice(w, w + 4).join(' '));
       if (chunks.length > 1 && chunks.at(-1).split(' ').length < 2) chunks.splice(-2, 2, chunks.at(-2) + ' ' + chunks.at(-1));
       const t0 = scenes[i].start - start + 0.15, per = (scenes[i].vo - 0.2) / chunks.length;
-      chunks.forEach((c, j) => ev.push(`Dialogue: 0,${assTime(t0 + j * per)},${assTime(Math.min(dur, t0 + (j + 1) * per))},Cap,,0,0,0,,${assEsc(c)}`));
+      chunks.forEach((c, j) => caps.push({ s: t0 + j * per, e: Math.min(dur, t0 + (j + 1) * per), text: assEsc(c) }));
     }
+    // owner 2026-11-13: never two captions at once
+    caps.sort((x, y) => x.s - y.s);
+    caps.forEach((x, k) => { if (caps[k + 1]) x.e = Math.min(x.e, caps[k + 1].s - 0.02); });
+    for (const x of caps) if (x.e - x.s > 0.05) ev.push(`Dialogue: 0,${assTime(x.s)},${assTime(x.e)},Cap,,0,0,0,,${x.text}`);
     const ass = `[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 0\n\n[V4+ Styles]\n` +
       `Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n` +
       `Style: Hook,Mukta ExtraBold,110,&H0040D5FF,&H0040D5FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,8,3,8,70,70,280,1\n` +
@@ -64,11 +68,15 @@ export async function makeShorts(dir, script, scenes, count = 4) {
     fs.writeFileSync(path.join(dir, `short${k}.ass`), ass);
     const outF = `short${k}.mp4`;
     // run ffmpeg inside the run folder so the subtitles filter gets short relative paths (no drive-letter escaping)
-    execFileSync('ffmpeg', ['-v', 'error', '-y', '-ss', start.toFixed(2), '-t', dur.toFixed(2), '-i', 'final.mp4', '-filter_complex',
+    // owner 2026-11-13: cut from the picture WITHOUT the long video's burned-in subtitles (they doubled up with the captions)
+    const clean = fs.existsSync(path.join(dir, 'video_raw.mp4')) && fs.existsSync(path.join(dir, 'mix.wav'));
+    const src = clean ? ['-ss', start.toFixed(2), '-t', dur.toFixed(2), '-i', 'video_raw.mp4', '-ss', start.toFixed(2), '-t', dur.toFixed(2), '-i', 'mix.wav']
+      : ['-ss', start.toFixed(2), '-t', dur.toFixed(2), '-i', 'final.mp4'];
+    execFileSync('ffmpeg', ['-v', 'error', '-y', ...src, '-filter_complex',
       `[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=24:2,eq=brightness=-0.25[bg];` +
       `[b]scale=1080:-2[fg];[bg][fg]overlay=0:(H-h)/2-60,subtitles=short${k}.ass:fontsdir=fonts,format=yuv420p,` +
       `setparams=color_primaries=bt709:color_trc=bt709:colorspace=bt709:range=tv[v]`,
-      '-map', '[v]', '-map', '0:a', '-r', '30', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '21', '-c:a', 'aac', '-b:a', '160k',
+      '-map', '[v]', '-map', clean ? '1:a' : '0:a', '-r', '30', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '21', '-c:a', 'aac', '-b:a', '160k',
       '-af', 'afade=t=out:st=' + (dur - 0.8).toFixed(2) + ':d=0.8', '-movflags', '+faststart', `short${k}.tmp.mp4`], { cwd: dir, stdio: 'inherit' });
     fs.renameSync(path.join(dir, `short${k}.tmp.mp4`), path.join(dir, outF));
     out.push({ file: outF, title: String(sh.title).slice(0, 90), hook: sh.hook, start, dur });
