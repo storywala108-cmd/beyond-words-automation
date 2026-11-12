@@ -121,7 +121,12 @@ export async function ensurePlaylist(key, title, description = '') {
   cache[key] = p.id; fs.writeFileSync(f, JSON.stringify(cache, null, 2));
   return p.id;
 }
+// a freshly uploaded video often gives 409 "aborted" → retry a few times with a pause
 export async function addToPlaylist(playlistId, videoId) {
-  return api('playlistItems?part=snippet', { method: 'POST', headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ snippet: { playlistId, resourceId: { kind: 'youtube#video', videoId } } }) });
+  for (let i = 1; ; i++) {
+    try {
+      return await api('playlistItems?part=snippet', { method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ snippet: { playlistId, resourceId: { kind: 'youtube#video', videoId } } }) });
+    } catch (e) { if (i >= 5 || !/409|500|503/.test(e.message)) throw e; await new Promise(r => setTimeout(r, 30e3 * i)); }
+  }
 }
