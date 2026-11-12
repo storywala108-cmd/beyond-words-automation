@@ -1,47 +1,48 @@
 {
-  "at": "2026-11-12T14:24:34.891Z",
+  "at": "2026-11-12T19:15:02.020Z",
   "channels": [
-    "TOON VANI",
-    "Kahaniyon Ka Safar",
-    "Goldy Toons",
-    "⑱ƥѱȓãήȃ$",
-    "Roongiin Golpoo Hindi"
+    "M4 CREATIONS ",
+    "Coov Records Official",
+    "C Drama Master",
+    "Sidhu Brothers Entertainment",
+    "Filmi Flying "
   ],
   "wants": [
     {
-      "topic": "Divine intervention and karmic justice in traditional festivals",
-      "evidence": "⑱ƥѱȓãήȃ$ channel performance on Diwali/Bhai Dooj stories (35x vsNormal)",
+      "topic": "Multi-episode serialized romantic drama",
+      "evidence": "M4 Creations and Sidhu Brothers Entertainment both show massive spikes (13x and 373x vsNormal) when releasing sequential episodes of web series.",
       "strength": 10
     },
     {
-      "topic": "Family dynamics involving daughter-in-law (Bahu) and mother-in-law (Saas) conflicts",
-      "evidence": "High performance of Goldy Toons content featuring 'two sisters' or 'orphaned girls' in marital homes",
+      "topic": "IPS/Authority figure vs. Corruption/Injustice",
+      "evidence": "Filmi Flying's top performers feature IPS officers and social justice themes, indicating a strong appetite for 'heroic justice' narratives.",
       "strength": 9
     },
     {
-      "topic": "Social status reversal (rags-to-riches or sudden fall from grace)",
-      "evidence": "Kahaniyon Ka Safar, specifically the DSP/SP spouse betrayal tropes",
+      "topic": "High-production value musical series",
+      "evidence": "Coov Records' top video (Jagdalpur) shows that audiences engage deeply with cinematic, music-driven storytelling.",
       "strength": 8
     },
     {
-      "topic": "Moral fables featuring animals with human-like domestic problems",
-      "evidence": "TOON VANI's massive 393x vsNormal spike on moral stories",
-      "strength": 10
+      "topic": "Urdu/Hindi dubbed international dramas",
+      "evidence": "C Drama Master's consistent performance with Chinese dramas suggests a niche but loyal audience for translated foreign family-drama.",
+      "strength": 7
     }
   ],
   "gaps": [
-    "Nuanced portrayals of divorce in Indian society that don't rely solely on the 'betrayed spouse returns as a high-ranking officer' trope",
-    "Stories focusing on the emotional labor of women in joint families that move beyond the 'evil mother-in-law' stereotype",
-    "Literary-style stories that incorporate modern urban Indian settings rather than just rural/mythological backdrops"
+    "High-quality, long-form literary adaptations that bridge the gap between traditional Premchand-style themes and modern production values.",
+    "Interactive storytelling where the audience can influence the outcome of the 'love-betrayal' arcs.",
+    "Authentic 'small-town' Indian family dynamics that aren't overly melodramatic but focus on realistic emotional stakes."
   ],
   "saturated": [
-    "Generic 'moral story' animal cartoons without a unique twist",
-    "Over-dramatized betrayal stories where the protagonist returns as a high-ranking government official (DSP/SP/Collector)",
-    "Repetitive Diwali/Festival-specific 'curse or blessing' narratives"
+    "Short-form AI-generated content (as seen in the poor performance of Filmi Flying's non-narrative shorts).",
+    "Generic 'Love After Marriage' titles without a strong, unique hook or specific conflict.",
+    "Low-effort 'IELTS/Punjabi youth' comedy sketches which are currently underperforming compared to scripted drama."
   ],
   "title_patterns": [
-    "High-stakes emotional conflict + specific outcome (e.g., 'Talaq', 'SP ban kar lauta')",
-    "Festival/Mythological urgency (e.g., 'Diwali ki raat', 'Yamraj ka tarazu')",
-    "Direct moral labeling (e.g., 'Moral Story', 'Hindi Kahaniyan', 'Sachi seekh')"
+    "Use of emojis (❤️, 🔥) to signal emotional intensity.",
+    "Episode numbering (Episode 1, Episode 2) to encourage binge-watching.",
+    "High-stakes conflict in titles (e.g., 'IPS Madam', 'Corruption', 'Betrayal', 'Widow').",
+    "Direct questions in titles to pique curiosity (e.g., 'Why did she call him at midnight?')."
   ]
 }
