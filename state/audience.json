@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-12T12:47:34.362Z",
+  "channels": [
+    "AI Kanchan ",
+    "Toons Online",
+    "SK STORY TOON",
+    "The Unlimited Story",
+    "Ankahee Files"
+  ],
+  "wants": [
+    {
+      "topic": "Social mobility and justice (SDM/DM/Success narratives)",
+      "evidence": "AI Kanchan's top performer about a daughter becoming an SDM and seeking accountability; high vsNormal scores for authority-figure revenge plots.",
+      "strength": 10
+    },
+    {
+      "topic": "Family injustice and 'Saas-Bahu' conflict",
+      "evidence": "AI Kanchan and SK STORY TOON videos featuring mistreated daughters-in-law or poor families being humiliated by relatives.",
+      "strength": 9
+    },
+    {
+      "topic": "Seasonal/Festival-themed moral stories",
+      "evidence": "Toons Online's massive spike for 'Garib ki Diwali' (94k vsNormal), showing extreme demand for holiday-specific emotional content.",
+      "strength": 9
+    },
+    {
+      "topic": "High-stakes emotional redemption",
+      "evidence": "Videos where the protagonist returns to humiliate those who wronged them (e.g., 'Gaanv ro pada' tropes) consistently outperform.",
+      "strength": 8
+    }
+  ],
+  "gaps": [
+    "Authentic literary adaptations (like Munshi Premchand) are currently niche and lack the high-octane emotional 'revenge' payoff that the broader audience craves.",
+    "Lack of 'Part 2' or serialized storytelling in the high-performing 'revenge' genre; viewers are often left wanting closure on specific character arcs.",
+    "Real-world grounded family drama is being overshadowed by supernatural/horror crossovers (Ankahee Files), leaving a gap for grounded, realistic family struggles without the 'chudail' (witch) element."
+  ],
+  "saturated": [
+    "Generic 'Poor family finds gold/treasure' tropes, which are showing lower engagement.",
+    "Over-dramatized 'Rainy day' or 'Forest' settings which have become low-effort filler content.",
+    "Short-form moral stories that lack a clear, singular emotional 'punch' or revenge arc."
+  ],
+  "title_patterns": [
+    "The 'Revenge/Accountability' hook: [Mistreatment] + [Role reversal/Authority role] + [Consequence/Public humiliation]",
+    "The 'Emotional/Crying' trigger: Using emojis (😭, 💔, 😱) combined with phrases like 'Gaon ro pada' (The whole village cried) or 'Pita ki maut ka raaz' (Secret of father's death).",
+    "The 'Social Status' contrast: 'Amir ghar ki bahu' (Rich house daughter-in-law) vs 'Garib' (Poor) dynamics.",
+    "The 'Moral/Festival' anchor: [Occasion/Festival] + [Poor family struggle] + [Heart-touching/Moral story]."
+  ]
+}
