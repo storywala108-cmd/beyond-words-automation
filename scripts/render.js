@@ -149,11 +149,12 @@ export function renderVideo(scenes, dir, { musicFiles = [], vcodec = ['libx264',
   if (musicFiles.length) {
     const bed = []; let covered = 0;
     while (covered < total + 5) { const f = musicFiles[bed.length % musicFiles.length]; bed.push(f); covered += dur(f) - 3; }
-    let g = bed.map((_, i) => `[${i + 1}:a]aresample=48000,loudnorm=I=-16:TP=-2[m${i}]`).join(';') + ';';
+    let g = bed.map((_, i) => `[${i + 1}:a]aresample=48000,highpass=f=60,lowpass=f=5000,afftdn=nf=-25,loudnorm=I=-16:TP=-2[m${i}]`).join(';') + ';';
     let lastM = '[m0]';
     for (let i = 1; i < bed.length; i++) { g += `${lastM}[m${i}]acrossfade=d=3[x${i}];`; lastM = `[x${i}]`; }
-    g += `${lastM}volume=-13dB,atrim=0:${total.toFixed(3)},afade=t=in:d=1.2,afade=t=out:st=${(total - 4).toFixed(3)}:d=4[m];` +
-      `[0:a]loudnorm=I=-16:TP=-2:LRA=7,aresample=48000,asplit[v1][v2];[m][v1]sidechaincompress=threshold=0.05:ratio=2.5:attack=40:release=600[md];` +
+    // owner 2026-11-13: music always suspenseful + dramatic, and no static/hiss — low-passed + denoised, ducked under the voice
+    g += `${lastM}volume=-15dB,atrim=0:${total.toFixed(3)},afade=t=in:d=1.2,afade=t=out:st=${(total - 4).toFixed(3)}:d=4[m];` +
+      `[0:a]loudnorm=I=-16:TP=-2:LRA=7,aresample=48000,asplit[v1][v2];[m][v1]sidechaincompress=threshold=0.04:ratio=4:attack=30:release=500[md];` +
       `[v2][md]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[out]`;
     g = g.replace('[v2][md]amix=inputs=2:normalize=0,', `[${bed.length + 1}:a]aresample=48000,volume=-6dB[sx];[v2][md][sx]amix=inputs=3:normalize=0,`);
     ff(['-i', path.join(dir, 'voice.wav'), ...bed.flatMap(f => ['-i', f]), '-i', sfxF, '-filter_complex', g, '-map', '[out]', '-ac', '2', '-ar', '48000', mix]);

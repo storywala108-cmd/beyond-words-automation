@@ -79,10 +79,8 @@ if (!already) {
   uploads.push({ run, id: v.id, title: meta.title, topic: meta.topic, publishAt: publishAt || new Date().toISOString(), at: new Date().toISOString() });
   if (publishAt) log('note: YouTube goes public at', publishAt);
   wj(uploadsFile, uploads);                                    // recorded before anything else can fail → never twice
-  // owner 2026-11-12: no custom thumbnail — YouTube picks its own automatically (YT_CUSTOM_THUMB=true turns it back on)
-  if (String(env.YT_CUSTOM_THUMB).toLowerCase() === 'true') {
-    try { await setThumbnail(v.id, path.join(tmp, 'thumb.jpg')); log('thumbnail set'); } catch (e) { log('thumbnail failed:', e.message.slice(0, 120)); }
-  }
+  // owner 2026-11-13: bold text thumbnail again (needs the channel's one-time phone verification, else 403 → YouTube's own frame)
+  try { await setThumbnail(v.id, path.join(tmp, 'thumb.jpg')); log('thumbnail set'); } catch (e) { log('thumbnail failed:', e.message.slice(0, 120)); }
   // playlists: the category's + the series' own (owner 2026-11-12); a failure never blocks publishing
   try {
     const CAT = { family: 'परिवार की कहानियाँ | Beyond Words', sahitya: 'साहित्यिक कहानियाँ | Beyond Words', citylove: 'शहर, प्यार और धोखा | Beyond Words' };

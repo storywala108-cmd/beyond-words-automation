@@ -115,7 +115,11 @@ async function step(r) {
     s.stage = 'thumb'; save(r);
   }
   if (s.stage === 'thumb') {
-    makeThumb(path.join(dir, 'thumb_bg.jpg'), path.join(dir, 'thumb.jpg'), s.script.pack.thumb_text, Math.random() < 0.5 ? 'left' : 'right');
+    // owner 2026-11-13: bold text thumbnail with a red label (series: "एपिसोड N"/"भाग N" of N, else the category)
+    const c = s.ctx || {}, ser = c.seriesId ? getSeries(c.seriesId) : null;
+    const tag = ser && ser.episodes.length > 1 ? `${c.cat === 'citylove' ? 'एपिसोड' : 'भाग'} ${c.ep}` :
+      ({ family: 'परिवार की कहानी', sahitya: 'दिल छू लेने वाली कहानी', citylove: 'शहर, प्यार और धोखा' })[c.cat || 'family'];
+    makeThumb(path.join(dir, 'thumb_bg.jpg'), path.join(dir, 'thumb.jpg'), s.script.pack.thumb_text, Math.random() < 0.5 ? 'left' : 'right', { tag });
     s.stage = 'render'; save(r);
   }
   if (s.stage === 'render') {
