@@ -1,48 +1,47 @@
 {
-  "at": "2026-11-12T12:47:34.362Z",
+  "at": "2026-11-12T14:24:34.891Z",
   "channels": [
-    "AI Kanchan ",
-    "Toons Online",
-    "SK STORY TOON",
-    "The Unlimited Story",
-    "Ankahee Files"
+    "TOON VANI",
+    "Kahaniyon Ka Safar",
+    "Goldy Toons",
+    "⑱ƥѱȓãήȃ$",
+    "Roongiin Golpoo Hindi"
   ],
   "wants": [
     {
-      "topic": "Social mobility and justice (SDM/DM/Success narratives)",
-      "evidence": "AI Kanchan's top performer about a daughter becoming an SDM and seeking accountability; high vsNormal scores for authority-figure revenge plots.",
+      "topic": "Divine intervention and karmic justice in traditional festivals",
+      "evidence": "⑱ƥѱȓãήȃ$ channel performance on Diwali/Bhai Dooj stories (35x vsNormal)",
       "strength": 10
     },
     {
-      "topic": "Family injustice and 'Saas-Bahu' conflict",
-      "evidence": "AI Kanchan and SK STORY TOON videos featuring mistreated daughters-in-law or poor families being humiliated by relatives.",
+      "topic": "Family dynamics involving daughter-in-law (Bahu) and mother-in-law (Saas) conflicts",
+      "evidence": "High performance of Goldy Toons content featuring 'two sisters' or 'orphaned girls' in marital homes",
       "strength": 9
     },
     {
-      "topic": "Seasonal/Festival-themed moral stories",
-      "evidence": "Toons Online's massive spike for 'Garib ki Diwali' (94k vsNormal), showing extreme demand for holiday-specific emotional content.",
-      "strength": 9
-    },
-    {
-      "topic": "High-stakes emotional redemption",
-      "evidence": "Videos where the protagonist returns to humiliate those who wronged them (e.g., 'Gaanv ro pada' tropes) consistently outperform.",
+      "topic": "Social status reversal (rags-to-riches or sudden fall from grace)",
+      "evidence": "Kahaniyon Ka Safar, specifically the DSP/SP spouse betrayal tropes",
       "strength": 8
+    },
+    {
+      "topic": "Moral fables featuring animals with human-like domestic problems",
+      "evidence": "TOON VANI's massive 393x vsNormal spike on moral stories",
+      "strength": 10
     }
   ],
   "gaps": [
-    "Authentic literary adaptations (like Munshi Premchand) are currently niche and lack the high-octane emotional 'revenge' payoff that the broader audience craves.",
-    "Lack of 'Part 2' or serialized storytelling in the high-performing 'revenge' genre; viewers are often left wanting closure on specific character arcs.",
-    "Real-world grounded family drama is being overshadowed by supernatural/horror crossovers (Ankahee Files), leaving a gap for grounded, realistic family struggles without the 'chudail' (witch) element."
+    "Nuanced portrayals of divorce in Indian society that don't rely solely on the 'betrayed spouse returns as a high-ranking officer' trope",
+    "Stories focusing on the emotional labor of women in joint families that move beyond the 'evil mother-in-law' stereotype",
+    "Literary-style stories that incorporate modern urban Indian settings rather than just rural/mythological backdrops"
   ],
   "saturated": [
-    "Generic 'Poor family finds gold/treasure' tropes, which are showing lower engagement.",
-    "Over-dramatized 'Rainy day' or 'Forest' settings which have become low-effort filler content.",
-    "Short-form moral stories that lack a clear, singular emotional 'punch' or revenge arc."
+    "Generic 'moral story' animal cartoons without a unique twist",
+    "Over-dramatized betrayal stories where the protagonist returns as a high-ranking government official (DSP/SP/Collector)",
+    "Repetitive Diwali/Festival-specific 'curse or blessing' narratives"
   ],
   "title_patterns": [
-    "The 'Revenge/Accountability' hook: [Mistreatment] + [Role reversal/Authority role] + [Consequence/Public humiliation]",
-    "The 'Emotional/Crying' trigger: Using emojis (😭, 💔, 😱) combined with phrases like 'Gaon ro pada' (The whole village cried) or 'Pita ki maut ka raaz' (Secret of father's death).",
-    "The 'Social Status' contrast: 'Amir ghar ki bahu' (Rich house daughter-in-law) vs 'Garib' (Poor) dynamics.",
-    "The 'Moral/Festival' anchor: [Occasion/Festival] + [Poor family struggle] + [Heart-touching/Moral story]."
+    "High-stakes emotional conflict + specific outcome (e.g., 'Talaq', 'SP ban kar lauta')",
+    "Festival/Mythological urgency (e.g., 'Diwali ki raat', 'Yamraj ka tarazu')",
+    "Direct moral labeling (e.g., 'Moral Story', 'Hindi Kahaniyan', 'Sachi seekh')"
   ]
 }
