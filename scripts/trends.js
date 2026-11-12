@@ -22,18 +22,46 @@ export const FORMATS = [
     queries: ['दोस्त ने धोखा दिया कहानी', 'business partner betrayal story hindi', 'emotional hindi kahani dhokha'] },
   { id: 'comeback', name: 'Someone everybody called a failure comes back years later — the family sees who they really are',
     queries: ['सबने मज़ाक उड़ाया कहानी', 'motivational family story hindi', 'गरीब लड़के की कहानी'] },
+  // SAHITYA (owner 2026-11-12): original stories in the craft of classic Hindi literature (hindwi.org 50 best stories)
+  { id: 'gaon', cat: 'sahitya', name: 'A village / qasba story of poverty, pride and dignity in the manner of classic Hindi literature',
+    queries: ['प्रेमचंद की कहानी', 'हिंदी साहित्य कहानी', 'hindi kahani audio'] },
+  { id: 'maa', cat: 'sahitya', name: 'A literary story of a mother / old parent / child — sacrifice, hunger, love, told with a quiet devastating ending',
+    queries: ['मार्मिक हिंदी कहानी', 'emotional hindi kahani audio', 'माँ की कहानी'] },
+  { id: 'samaj', cat: 'sahitya', name: 'A literary story of society: a clerk, a labourer, a widow, a teacher — irony, class, duty, a moral turn',
+    queries: ['सामाजिक कहानी हिंदी', 'hindi sahitya kahaniyan', 'हिंदी कथा कहानी'] },
+  { id: 'vyangya', cat: 'sahitya', name: 'A satirical / ironic literary story about bureaucracy, middle-class pretence or social hypocrisy',
+    queries: ['व्यंग्य कहानी', 'हरिशंकर परसाई', 'hindi satire story'] },
+  // CITY LOVE SERIES (owner 2026-11-12): small-town youth in a big city, love, then betrayal — episode-wise
+  { id: 'itlove', cat: 'citylove', name: 'Series: a small-town boy/girl joins an IT company in Bangalore/Pune/Hyderabad/Noida, falls in love, is later cheated',
+    queries: ['love story hindi web series', 'प्यार में धोखा कहानी', 'bangalore love story hindi'] },
+  { id: 'factorylove', cat: 'citylove', name: 'Series: a small-town youth working in a factory / small company / call centre in a big city, love and betrayal',
+    queries: ['emotional love story hindi', 'धोखा प्यार की कहानी', 'sad love story hindi'] },
 ];
+export const CATEGORIES = ['family', 'sahitya', 'citylove'];
+export const catOf = f => f.cat || 'family';
+// Playlist names on YouTube (one per category; series get their own playlist too)
+export const CATEGORY_NAMES = { family: 'परिवार की कहानियाँ', sahitya: 'साहित्यिक कहानियाँ', citylove: 'शहर, प्यार और धोखा' };
+
+// the category used least recently (rotates family → sahitya → citylove)
+export function nextCategory() {
+  const used = readJson('topics.json', []);
+  const fmt = Object.fromEntries(FORMATS.map(f => [f.id, catOf(f)]));
+  const last = Object.fromEntries(CATEGORIES.map(c => [c, -1]));
+  used.forEach((u, i) => { const c = u.cat || fmt[u.format]; if (c in last) last[c] = i; });
+  return CATEGORIES.slice().sort((a, b) => last[a] - last[b])[0];
+}
 const STATE = path.join(ROOT, 'state');
 // owner's sample story (2026-11-12) — we copy only the genre, never this plot
 const AVOID = ['Mumbai flat बेचकर गाँव लौटा बेटा जिसने bankruptcy का नाटक किया, मौसी ने उधार नहीं दिया, cousin ने माँ से plot की power of attorney माँगी'];
 const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(path.join(STATE, f), 'utf8')); } catch { return d; } };
 
-// the format we used least recently (never-used first)
-export function nextFormat() {
+// the format (of the given category) we used least recently (never-used first)
+export function nextFormat(cat = 'family') {
   const used = readJson('topics.json', []);
-  const last = Object.fromEntries(FORMATS.map(f => [f.id, -1]));
+  const pool = FORMATS.filter(f => catOf(f) === cat);
+  const last = Object.fromEntries(pool.map(f => [f.id, -1]));
   used.forEach((u, i) => { if (u.format in last) last[u.format] = i; });
-  return FORMATS.slice().sort((a, b) => last[a.id] - last[b.id])[0];
+  return pool.slice().sort((a, b) => last[a.id] - last[b.id])[0];
 }
 
 export async function researchTrends(format = nextFormat()) {
@@ -78,9 +106,16 @@ const fits = t => FORMATS.some(f => f.id === t.format) && String(t.topic || '').
 export async function pickTopic(trending, format = nextFormat(), audience = null) {
   const used = readJson('topics.json', []);
   const learn = readJson('learnings.json', {});
+  const BRIEF = {
+    family: 'ORIGINAL family-drama stories told like a novel (about 15 min, first-person male narrator)',
+    sahitya: 'ORIGINAL literary short stories in the craft of classic Hindi literature (Premchand, Guleri, Prasad, ' +
+      'Amarkant, Bhisham Sahni, Renu) — never their plots — told complete, 1 or 2 parts of ~14 min',
+    citylove: 'an episode-wise SERIES (6-8 episodes of ~12 min): a small-town youth in a big Indian city (IT company / ' +
+      'small company / factory), love, then betrayal, then rising again',
+  };
   const lines = [
-    `You plan videos for "Beyond Words", a Hindi YouTube channel of ORIGINAL family-drama stories told like a novel ` +
-    `(about 15 min, first-person male narrator, Indian Hindi-belt audience).`,
+    `You plan videos for "Beyond Words", a Hindi YouTube channel. This video's category: ${BRIEF[catOf(format)]} ` +
+    `(Indian Hindi-belt audience).`,
     `This video's FORMAT: ${format.name} (format id "${format.id}").`,
     `Demand signal: these Hindi story videos get the most views per day right now (title | views/day | outlier = views ÷ ` +
     `the channel's subscribers; above 1 means the STORY pulled viewers, not the channel's fame):`,
@@ -100,9 +135,10 @@ export async function pickTopic(trending, format = nextFormat(), audience = null
     `What worked / didn't on OUR channel so far: ${JSON.stringify(learn.summary || 'no data yet')}`,
     `Never copy these plots: ${AVOID.join('; ')}`,
     `Story ideas we already made (never repeat): ${used.map(u => u.topic).join('; ') || 'none'}`, '',
-    `Propose 5 ORIGINAL story ideas for THIS FORMAT with the highest demand right now: invented ordinary Indian ` +
-    `families, a secret, a betrayal that escalates, planted proof and a legal, dignified payoff; no caste/religion ` +
-    `hatred, no violence, no sexual content. Never copy any title or plot above. Rank them by expected views.`,
+    `Propose 5 ORIGINAL ${catOf(format) === 'citylove' ? 'SERIES' : 'story'} ideas for THIS FORMAT with the highest ` +
+    `demand right now: invented ordinary Indian people, a strong emotional core and an ending that stays; no ` +
+    `caste/religion hatred, no violence, no sexual content. Never copy any title or plot above or any famous story. ` +
+    `Rank them by expected views.`,
     `Return JSON {"topics":[{"topic":"the story idea in Hindi (Devanagari), 1-2 specific sentences","angle":"the hook in one Hindi line",` +
     `"why":"why it will get views","title":"YouTube title idea in Hindi","format":"${format.id}"}]}`);
   const { data, model } = await aiJson(lines.join('\n'),

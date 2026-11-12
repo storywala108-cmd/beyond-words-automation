@@ -3,11 +3,17 @@
 // packaging (title, description, tags, thumbnail) verified against the script.
 import fs from 'node:fs';
 import { aiJson, env, log } from './lib.js';
-import { NARRATOR, bannedHits } from './script_writer.js';
+import { narratorFor, bannedHits } from './script_writer.js';
 
 const words = s => String(s).trim().split(/\s+/).filter(Boolean).length;
 // spoken Hindi from Gemini TTS ≈ 130-145 words/min → 2,000 words ≈ 14-15 min (one long video a day on free quotas)
-const TARGET = Number(env.TARGET_WORDS || 2000);
+let TARGET = Number(env.TARGET_WORDS || 2000);
+// per-video context (owner 2026-11-12: 3 categories, series/parts): set by writeLongScript
+let NARRATOR = narratorFor('family');
+let CTX = { cat: 'family' };
+const isSeries = () => CTX.series && CTX.series.episodes.length > 1;
+const lastEpisode = () => !isSeries() || CTX.ep.n === CTX.series.episodes.length;
+const epLabel = () => CTX.cat === 'citylove' ? `एपिसोड ${CTX.ep.n}` : `भाग ${CTX.ep.n}`;
 
 // "ui" = an on-screen motion graphic instead of a picture (WhatsApp group, call, bank balance, the हिसाब note,
 // a document, a big text line). They cost no image quota and are what makes the edit feel alive.
@@ -40,6 +46,21 @@ function normScenes(d) {
 export async function outline(topic) {
   const minutes = Math.round(TARGET / 135);
   const chapters = Math.max(5, Math.round(TARGET / 300));
+  if (CTX.series) {
+    // a part/episode of a planned series: characters and world come from the series bible (same looks every episode)
+    const s = CTX.series, ep = CTX.ep;
+    const prev = s.episodes.filter(e => e.n < ep.n).map(e => `${e.n}. ${e.title}: ${e.summary || e.plan}`).join('\n');
+    const { data } = await aiJson(
+      `${NARRATOR}\n\nSERIES BIBLE: ${JSON.stringify({ title: s.title, world: s.world, characters: s.characters, ending: s.ending })}\n` +
+      `${prev ? `What happened before:\n${prev}\n` : ''}Now plan ${epLabel()} of ${s.episodes.length}: "${ep.title}" — ${ep.plan}\n` +
+      `About ${minutes} minutes, ${chapters} chapters. ${ep.n > 1 ? 'Open with a 2-3 line recap woven into the story. ' : ''}` +
+      `${lastEpisode() ? `This is the FINAL part: land the series ending (${s.ending}).` : `End on this cliffhanger: ${ep.cliffhanger || 'a turn that makes viewers wait for the next part'}.`}\n` +
+      `Return JSON {"cold_open":"the first 20 seconds","chapters":[{"name":"short Hindi chapter title","beats":["..."],` +
+      `"cliffhanger":"how it ends"}],"plants":["details planted for later"],"device":null,"ending":"final image + last line idea"}`,
+      { check: d => { if (!d.chapters?.length) throw new Error('no chapters'); return d; }, temperature: 0.9 },
+    );
+    return { ...data, characters: s.characters, title_idea: s.title };
+  }
   const { data } = await aiJson(
     `${NARRATOR}\n\nPlan an ORIGINAL ${minutes}-minute Hindi story for this idea: ${topic.topic}\nHook angle: ${topic.angle}\n` +
     `Build the story bible first, then ${chapters} chapters that escalate (setup + secret → first humiliation → ` +
@@ -72,8 +93,12 @@ async function writeChapter(topic, plan, i, prevTail) {
     `under 12 words. ` +
     `Picture scenes must name the characters exactly as in the bible. ` +
     (prevTail ? `It continues right after: "${prevTail}". Flow on naturally, don't recap. ` : '') +
-    (isLast ? `This is the final chapter: land the ending (${plan.ending}), then one short warm line asking viewers ` +
-      `to write in the comments whether they have seen such relatives / such a mother. ` : '') +
+    (isLast ? (lastEpisode()
+      ? `This is the final chapter: land the ending (${plan.ending}), then one short warm line asking viewers to share ` +
+        `in the comments what they felt / whether they have lived something like it. `
+      : `This is the last chapter of ${epLabel()}: end on the cliffhanger (${plan.ending}), then one short line ` +
+        `saying the story continues in the next ${CTX.cat === 'citylove' ? 'episode' : 'part'} ("आगे क्या हुआ… अगले ` +
+        `${CTX.cat === 'citylove' ? 'एपिसोड' : 'भाग'} में"). `) : '') +
     `\nReturn JSON {${SCENE_SHAPE}}`;
   const draft = await aiJson(ask, { check: normScenes });
   const edited = await aiJson(
@@ -88,7 +113,10 @@ async function writeChapter(topic, plan, i, prevTail) {
 }
 
 // cacheFile: outline + finished chapters are saved as they're made, so a restart continues instead of starting over
-export async function writeLongScript(topic, cacheFile) {
+export async function writeLongScript(topic, cacheFile, ctx = {}) {
+  CTX = { cat: 'family', ...ctx };
+  NARRATOR = narratorFor(CTX.cat);
+  TARGET = Number(CTX.words || env.TARGET_WORDS || 2000);
   const cache = (() => { try { return JSON.parse(fs.readFileSync(cacheFile, 'utf8')); } catch { return {}; } })();
   const keep = () => cacheFile && fs.writeFileSync(cacheFile, JSON.stringify(cache));
   log('story bible + outline…');
@@ -152,18 +180,27 @@ export async function writeLongScript(topic, cacheFile) {
     `"thumb_prompt":"in ENGLISH: thumbnail picture: the most emotional moment, ONE character (named, with the bible ` +
     `look) large on the RIGHT half, face and strong emotion clear, warm dramatic light, the LEFT 40% simple and darker ` +
     `for big text, no text","description":"2 short paragraphs in ENGLISH about the story without spoiling the ending, ` +
-    `then one line inviting viewers to share in the comments","tags":["12-15 tags, Hindi and English, e.g. hindi ` +
-    `kahani, family drama, emotional story"]}`,
+    `then one line inviting viewers to share in the comments","tags":["12-15 tags, Hindi and English, fitting this ` +
+    `category (e.g. hindi kahani, family drama / hindi sahitya kahani / love story hindi, dhokha, emotional story)"]}` +
+    (isSeries() ? `\nThis is ${epLabel()} of the series "${CTX.series.title}"; the title must still work on its own (the ` +
+      `series label is added in code).` : ''),
     { check: d => { if (!d.title || !d.description) throw new Error('no package'); return d; } },
   );
   await verifyPack(pack, all);
-  return { topic, plan, chapters, pack, words: words(all), banned_left: bannedHits(all) };
+  // series/parts: the label goes in front so the order is clear in search, playlists and Shorts links
+  if (isSeries()) {
+    pack.title = `${CTX.series.title} | ${epLabel()} — ${pack.title}`.slice(0, 100);
+    pack.thumb_text = `${pack.thumb_text}`;
+    pack.episodeLabel = epLabel();
+  }
+  pack.category = CTX.cat;
+  return { topic, plan, chapters, pack, words: words(all), banned_left: bannedHits(all), ctx: { cat: CTX.cat, seriesId: CTX.series?.id, ep: CTX.ep?.n } };
 }
 
 // Misleading titles hurt trust and the channel, so title + thumbnail text must be literally supported by the script.
 export async function verifyPack(pack, script) {
   const { data } = await aiJson(
-    `Script of a Hindi family-drama story video:\n${script.slice(0, 9000)}\n\nProposed YouTube title: "${pack.title}"\nThumbnail text: "${pack.thumb_text}"\n` +
+    `Script of a Hindi story video:\n${script.slice(0, 9000)}\n\nProposed YouTube title: "${pack.title}"\nThumbnail text: "${pack.thumb_text}"\n` +
     `Check that the title and thumbnail text only promise what really happens in this script. Curiosity is fine, ` +
     `invented events are not. Return JSON {"title_ok":true/false,"thumb_ok":true/false,` +
     `"title":"the same title if ok, else an honest curiosity title in Hindi (Devanagari) max 80 chars","thumb_text":"same if ok, else 2-5 honest Hindi words","why":"short"}`,

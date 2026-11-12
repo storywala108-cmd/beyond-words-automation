@@ -110,3 +110,18 @@ export async function videoStats(startDate, endDate) {
   const cols = r.columnHeaders.map(c => c.name);
   return (r.rows || []).map(row => Object.fromEntries(row.map((v, i) => [cols[i], v])));
 }
+
+// Playlists (owner 2026-11-12: each category and each series gets its own playlist). Ids cached in state/playlists.json.
+export async function ensurePlaylist(key, title, description = '') {
+  const f = new URL('../state/playlists.json', import.meta.url);
+  let cache = {}; try { cache = JSON.parse(fs.readFileSync(f, 'utf8')); } catch {}
+  if (cache[key]) return cache[key];
+  const p = await api('playlists?part=snippet,status', { method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ snippet: { title: title.slice(0, 150), description, defaultLanguage: 'hi' }, status: { privacyStatus: 'public' } }) });
+  cache[key] = p.id; fs.writeFileSync(f, JSON.stringify(cache, null, 2));
+  return p.id;
+}
+export async function addToPlaylist(playlistId, videoId) {
+  return api('playlistItems?part=snippet', { method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ snippet: { playlistId, resourceId: { kind: 'youtube#video', videoId } } }) });
+}

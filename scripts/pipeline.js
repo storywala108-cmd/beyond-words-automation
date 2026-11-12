@@ -7,7 +7,11 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ROOT, env, log, tts, TTS_MODELS, fluxImage } from './lib.js';
 import { makeThumb } from './thumb.js';
-import { researchTrends, pickTopic, nextFormat } from './trends.js';
+import { researchTrends, pickTopic, nextFormat, nextCategory, CATEGORIES } from './trends.js';
+import { nextEpisode, createSeries, markEpisode, getSeries } from './series.js';
+
+// words per video by category (≈135 spoken words/min): family ~15 min, sahitya part ~14 min, city-love episode ~12 min
+const WORDS = { family: Number(env.TARGET_WORDS || 2000), sahitya: 1900, citylove: 1650 };
 import { competitorDemand } from './competitors.js';
 import { makeShorts } from './shorts.js';
 import { writeLongScript } from './long_script.js';
@@ -42,7 +46,10 @@ async function step(r) {
 
   if (s.stage === 'script') {
     log('writing script:', s.topic.topic);
-    s.script = await writeLongScript(s.topic, path.join(dir, 'script_parts.json'));
+    const c = s.ctx || { cat: 'family' };
+    const series = c.seriesId ? getSeries(c.seriesId) : null;
+    s.script = await writeLongScript(s.topic, path.join(dir, 'script_parts.json'), {
+      cat: c.cat, words: WORDS[c.cat], series, ep: series?.episodes.find(e => e.n === c.ep) });
     wj(path.join(dir, 'script.json'), s.script);
     s.stage = 'voice'; save(r);
   }
@@ -169,7 +176,11 @@ async function step(r) {
     const meta = {
       run: s.id, topic: s.topic.topic, title: p.title.slice(0, 100), tags: p.tags, duration: s.duration,
       hashtags: (p.tags || []).filter(t => /^[a-z0-9 ]+$/i.test(t)).slice(0, 8).map(t => '#' + t.replace(/\s+/g, '')).join(' ') +
-        ' #hindikahani #familydrama #emotionalstory',
+        ({ family: ' #hindikahani #familydrama #emotionalstory', sahitya: ' #hindikahani #hindisahitya #kahaniyan',
+          citylove: ' #lovestory #hindikahani #dhokha' }[s.ctx?.cat || 'family']),
+      // playlists (publish.js): one per category + one per series
+      category: s.ctx?.cat || 'family', seriesId: s.ctx?.seriesId || null, episode: s.ctx?.ep || null,
+      seriesTitle: s.ctx?.seriesId ? getSeries(s.ctx.seriesId)?.title || null : null,
       description: `${p.description}\n\nChapters\n${s.chapters.map(([t, n]) => `${t} ${n}`).join('\n')}\n\n` +
         `Music: ${s.music.join(', ')} (Mixkit).\n\nDisclaimer: This is a work of fiction. Names, characters and events ` +
         `are imaginary; any resemblance to real people is coincidental. Visuals and narration are AI-generated.`,
@@ -203,20 +214,36 @@ async function main() {
     log(`buffer ${ready}/${BUFFER} → making the next video`);
   }
   if (!r) {
-    const fmt = nextFormat();
-    let topic;
-    if (forcedTopic) topic = { topic: forcedTopic, angle: args.includes('--angle') ? args[args.indexOf('--angle') + 1] : '', title: forcedTopic, format: 'manual' };
-    else {
-      const trend = await researchTrends(fmt);
-      const audience = await competitorDemand(trend).catch(e => { log('competitor analysis skipped:', e.message.slice(0, 120)); return null; });
-      topic = await pickTopic(trend, fmt, audience);
+    // owner 2026-11-12: categories rotate family → sahitya → citylove; a series continues with its next episode
+    const argCat = args.includes('--cat') ? args[args.indexOf('--cat') + 1] : null;
+    const cat = CATEGORIES.includes(argCat) ? argCat : forcedTopic ? 'family' : nextCategory();
+    let topic, ctx = { cat };
+    const cont = cat !== 'family' && !forcedTopic ? nextEpisode(cat) : null;
+    if (cont) {
+      topic = { topic: cont.series.topic, angle: '', title: cont.series.title, format: cont.series.format };
+      ctx = { cat, seriesId: cont.series.id, ep: cont.ep.n };
+      log(`continuing "${cont.series.title}" → part/episode ${cont.ep.n}/${cont.series.episodes.length}`);
+    } else {
+      const fmt = nextFormat(cat);
+      if (forcedTopic) topic = { topic: forcedTopic, angle: args.includes('--angle') ? args[args.indexOf('--angle') + 1] : '', title: forcedTopic, format: argCat ? fmt.id : 'manual' };
+      else {
+        const trend = await researchTrends(fmt);
+        const audience = await competitorDemand(trend).catch(e => { log('competitor analysis skipped:', e.message.slice(0, 120)); return null; });
+        topic = await pickTopic(trend, fmt, audience);
+      }
+      if (cat !== 'family') {
+        const sr = await createSeries(topic, cat);
+        ctx = { cat, seriesId: sr.id, ep: 1 };
+      }
     }
-    log('format:', topic.format);
+    log('category:', cat, '| format:', topic.format);
     // Hindi topics have no Latin letters → id from the date/time (+ the format)
-    const id = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-') + '-' + String(topic.format || 'story').replace(/[^a-z0-9]+/gi, '');
-    r = { dir: path.join(RUNS, id), s: { id, topic, stage: 'script', created: new Date().toISOString() } };
+    const id = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-') + '-' + String(topic.format || 'story').replace(/[^a-z0-9]+/gi, '') + (ctx.ep ? `-ep${ctx.ep}` : '');
+    r = { dir: path.join(RUNS, id), s: { id, topic, ctx, stage: 'script', created: new Date().toISOString() } };
     fs.mkdirSync(r.dir, { recursive: true }); save(r);
-    const used = rj(path.join(STATE, 'topics.json'), []); used.push({ topic: topic.topic, format: topic.format, run: id, at: r.s.created });
+    // the episode is reserved for this run right away, so the next run never makes it twice
+    if (ctx.seriesId) markEpisode(ctx.seriesId, ctx.ep, id);
+    const used = rj(path.join(STATE, 'topics.json'), []); used.push({ topic: topic.topic, format: topic.format, cat, series: ctx.seriesId, ep: ctx.ep, run: id, at: r.s.created });
     wj(path.join(STATE, 'topics.json'), used);
     log('new video:', topic.topic);
   }

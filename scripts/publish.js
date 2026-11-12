@@ -8,7 +8,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ROOT, env, log } from './lib.js';
 import { folder, list, download, move, remove, usage, QUEUE, PUBLISHED } from './drive.js';
-import { upload, setThumbnail, api } from './yt.js';
+import { upload, setThumbnail, api, ensurePlaylist, addToPlaylist } from './yt.js';
 import { publishFacebookVideo, publishFacebookReel, publishInstagramReel, publishFacebookStory, publishInstagramStory } from './social.js';
 
 const FORCE = process.argv.includes('--force');
@@ -80,6 +80,17 @@ if (!already) {
   if (publishAt) log('note: YouTube goes public at', publishAt);
   wj(uploadsFile, uploads);                                    // recorded before anything else can fail → never twice
   try { await setThumbnail(v.id, path.join(tmp, 'thumb.jpg')); log('thumbnail set'); } catch (e) { log('thumbnail failed:', e.message.slice(0, 120)); }
+  // playlists: the category's + the series' own (owner 2026-11-12); a failure never blocks publishing
+  try {
+    const CAT = { family: 'परिवार की कहानियाँ | Beyond Words', sahitya: 'साहित्यिक कहानियाँ | Beyond Words', citylove: 'शहर, प्यार और धोखा | Beyond Words' };
+    const cat = meta.category || 'family';
+    await addToPlaylist(await ensurePlaylist(`cat-${cat}`, CAT[cat] || CAT.family), v.id);
+    if (meta.seriesId && meta.seriesTitle) {
+      await addToPlaylist(await ensurePlaylist(`series-${meta.seriesId}`, `${meta.seriesTitle} — सभी ${cat === 'citylove' ? 'एपिसोड' : 'भाग'}`,
+        'एक के बाद एक, क्रम से देखिए।'), v.id);
+    }
+    log('added to playlists');
+  } catch (e) { log('playlist failed:', e.message.slice(0, 160)); }
   log('UPLOADED https://youtu.be/' + v.id);
 }
 // Facebook (full video) + Instagram (reel): each once, failures isolated from each other and from YouTube
