@@ -7,10 +7,9 @@ const ch = (await api('channels?part=brandingSettings,status&mine=true')).items[
 const b = ch.brandingSettings || {};
 b.channel = {
   ...b.channel,
-  title: 'Beyond Words',
   description: 'Beyond Words — कुछ कहानियाँ शब्दों से आगे की होती हैं।\n\n' +
     'परिवार, पैसा, धोखा और इंसाफ़ की दिल छू लेने वाली कहानियाँ, किसी उपन्यास की तरह। जब वक़्त बुरा आता है, तब पता चलता है कौन ' +
-    'अपना है और कौन सिर्फ़ नाम का। हर कहानी में एक "हिसाब" — और आख़िर में उसका पूरा चुकता।\n\n' +
+    'अपना है और कौन सिर्फ़ नाम का। रिश्तों की अनकही कहानियाँ — हर बार एक नई, हर बार दिल के करीब।\n\n' +
     'रोज़ एक नई लंबी कहानी + Shorts।\nFacebook: Beyond Words · Instagram: @beyondwords.kahani\n\n' +
     'सभी कहानियाँ काल्पनिक हैं; किसी भी व्यक्ति या घटना से समानता संयोग मात्र है।',
   keywords: '"hindi kahani" "family drama" "emotional story" "hindi story" "रिश्तों की कहानी" "परिवार की कहानी" ' +

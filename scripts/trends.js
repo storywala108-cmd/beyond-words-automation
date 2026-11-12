@@ -8,7 +8,7 @@ import { topRecent, channelSubs, topComments } from './yt.js';
 // Owner's genre (2026-11-12): ORIGINAL Hindi family-drama stories told like a novel. Each run focuses on the format
 // used least recently, so the channel rotates through all of them.
 export const FORMATS = [
-  { id: 'test', name: 'A hero secretly tests his relatives (pretends to be broke / sick / jobless) and keeps a हिसाब of who stood by him',
+  { id: 'test', name: 'A hero secretly tests his relatives (pretends to be broke / sick / jobless) and learns who really stood by him',
     queries: ['रिश्तेदारों की कहानी', 'emotional family story hindi', 'अपनों का असली चेहरा कहानी'] },
   { id: 'property', name: 'A property / inheritance betrayal: forged papers, a greedy brother or in-law, the truth proved in the end',
     queries: ['जमीन जायदाद की कहानी', 'property dispute story hindi', 'भाई ने धोखा दिया कहानी'] },

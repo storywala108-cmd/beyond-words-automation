@@ -88,7 +88,7 @@ background:#0b141a radial-gradient(circle at 20% 30%,#10202a 0,transparent 40%)}
 .l{font:600 31px/1.4 N;color:#2b2b2b;padding-left:24px;position:relative}.l:before{content:'•';position:absolute;left:0;color:#b33}
 .nw{background:#fff2b8;border-radius:8px;padding:6px 10px 6px 28px;font-weight:600}`;
     const pageFor = n => page(`<div class="phone"><div class="scr"><div class="bar" style="color:#555"><span>9:41</span><span>Notes</span></div>
-<div class="hd">${esc(u.title || 'हिसाब')}</div><div class="ls">${lines.slice(0, n).map((l, i) => `<div class="l ${i === n - 1 && n === lines.length ? 'nw' : ''}">${esc(l)}</div>`).join('')}</div></div></div>`, css);
+<div class="hd">${esc(u.title || 'नोट्स')}</div><div class="ls">${lines.slice(0, n).map((l, i) => `<div class="l ${i === n - 1 && n === lines.length ? 'nw' : ''}">${esc(l)}</div>`).join('')}</div></div></div>`, css);
     return lines.length > 1 ? [pageFor(lines.length - 1), pageFor(lines.length)] : [pageFor(1)];
   },
   doc(u) {

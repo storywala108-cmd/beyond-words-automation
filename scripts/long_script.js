@@ -18,7 +18,7 @@ faces clear; no text, no phone screens","ui":null OR one of
 {"type":"whatsapp","title":"group or person name","messages":[{"from":"me" or a name,"text":"short Hindi message"}]} |
 {"type":"call","name":"caller name","state":"incoming" or "ended","duration":"0:42"} |
 {"type":"bank","label":"Balance" or "Credited" or "Debited","amount":"₹3,86,42,000","remark":"short remark"} |
-{"type":"note","title":"हिसाब","lines":["every line written so far, the newest last"]} |
+{"type":"note","title":"a short title that fits THIS story (e.g. मेरी डायरी, याद रखना, माँ की चिट्ठी)","lines":["every line written so far, the newest last"]} |
 {"type":"doc","title":"document heading in English","lines":["2-5 short lines"],"highlight":"the key words"} |
 {"type":"text","lines":["1-3 very short Hindi lines shown big, e.g. सत्रह साल।"]}}]`;
 
@@ -48,7 +48,7 @@ export async function outline(topic) {
     `and the viewer know","characters":[{"name":"Hindi name as used in the story","role":"relation to the narrator",` +
     `"look":"in ENGLISH, fixed look for every picture: age, face, hair, build, clothes, one detail (e.g. 62-year-old ` +
     `woman, round face, grey hair in a bun, small red bindi, faded green cotton saree, thin gold bangles)"}],` +
-    `"device":"the narrator's हिसाब note/diary and how he keeps it","plants":["objects/facts planted early that pay ` +
+    `"device":"only if it fits this story: the narrator's own recurring object (diary, letter, photo, voice notes…), else null","plants":["objects/facts planted early that pay ` +
     `off as proof"],"cold_open":"the first 20 seconds","chapters":[{"name":"short Hindi chapter title","beats":["..."],` +
     `"cliffhanger":"how it ends"}],"climax":"where and how the truth comes out","ending":"final image + last line idea"}`,
     { check: d => { if (!d.chapters?.length || !d.characters?.length) throw new Error('no chapters'); return d; }, temperature: 1.0 },
@@ -67,9 +67,9 @@ async function writeChapter(topic, plan, i, prevTail) {
   const ask = `${NARRATOR}\n\nStory bible + plan: ${JSON.stringify(plan)}\n` +
     `Write ${what} in Hindi — about ${target} words, ${Math.max(3, Math.round(target / 25))} scenes. ` +
     `About one scene in three should be a "ui" motion graphic where the story naturally has a phone message, call, ` +
-    `bank amount, the हिसाब note, a document or a line worth showing big (for those, "prompt" can be empty). Vary ` +
-    `them: WhatsApp / call / bank / doc / text first; the "note" at most ONCE per chapter, only right after a ` +
-    `betrayal, each note line under 12 words ("मौसी – माँ को दुकान के बाहर बीस मिनट खड़ा रखा।"). ` +
+    `bank amount, a document or a line worth showing big (for those, "prompt" can be empty). Vary them: WhatsApp / ` +
+    `call / bank / doc / text first; a "note" only if this story has a device, at most once per chapter, each line ` +
+    `under 12 words. ` +
     `Picture scenes must name the characters exactly as in the bible. ` +
     (prevTail ? `It continues right after: "${prevTail}". Flow on naturally, don't recap. ` : '') +
     (isLast ? `This is the final chapter: land the ending (${plan.ending}), then one short warm line asking viewers ` +

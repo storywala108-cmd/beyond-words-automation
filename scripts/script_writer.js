@@ -22,8 +22,10 @@ HOW A STORY WORKS (use every time, never mention these words):
 - Antagonists are relatives / in-laws / partners who are greedy, proud or two-faced — real people, not cartoons;
   each humiliation is specific, small and believable, and escalates step by step (words → money → property → the
   people the hero loves).
-- A recurring device the viewer waits for: the narrator quietly keeps a "हिसाब" (a phone note / diary / ledger) and
-  after each betrayal writes ONE precise line in it. Read these lines aloud; they are the story's spine.
+- OPTIONAL, only when it truly fits THIS story (owner 2026-11-12: not in every story): a recurring device the viewer
+  waits for — each story picks its OWN (an old diary, a letter, a photo album, a voice-note folder, a phone note);
+  never the same device or the word "हिसाब" as a fixed motif across stories. When used, the narrator keeps it and
+  adds to it at key moments. Many stories need no device at all.
 - Plant and pay off: every object or fact planted early (a bank transfer remark, a signed paper, a voice note, a
   photo) comes back as proof in the climax.
 - Rhythm like a novel: short punchy lines at tense moments ("पाँच मिनट। कोई जवाब नहीं।"), longer sensory lines
