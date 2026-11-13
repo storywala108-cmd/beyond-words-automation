@@ -43,6 +43,15 @@ const BUFFER = Number(env.BUFFER_TARGET || 4);   // ready videos to keep waiting
 async function step(r) {
   const { dir, s } = r;
   const scenes = () => s.script.chapters.flatMap((c, ci) => c.scenes.map((sc, si) => ({ ...sc, ci, si, chapterTitle: si === 0 && ci > 0 ? c.name : null })));
+  // owner 2026-11-13 (free image quota): every SHARE_EVERY-th picture scene in a chapter reuses the previous scene's
+  // picture with a different camera move → ~1/3 fewer images per video, so stock grows on the free 10k neurons/day
+  const SHARE = Number(env.SHARE_EVERY ?? 3);
+  const srcOf = all => { let run = 0; return all.map((x, i) => {
+    if (x.visual !== 'ink') { run = 0; return i; }
+    const prev = all[i - 1];
+    run = prev && prev.visual === 'ink' && prev.ci === x.ci ? run + 1 : 0;
+    return SHARE > 1 && run % SHARE === SHARE - 1 ? i - 1 : i;
+  }); };
 
   if (s.stage === 'script') {
     log('writing script:', s.topic.topic);
@@ -97,7 +106,8 @@ async function step(r) {
     const sc = scenes();
     let made = 0, quotaHit = false;
     const looks = s.script.plan?.characters || [];
-    const todo = sc.map((x, i) => [x, i]).filter(([x, i]) => x.visual === 'ink' && !fs.existsSync(path.join(dir, `img${String(i).padStart(3, '0')}.jpg`)));
+    const src = srcOf(sc);
+    const todo = sc.map((x, i) => [x, i]).filter(([x, i]) => x.visual === 'ink' && src[i] === i && !fs.existsSync(path.join(dir, `img${String(i).padStart(3, '0')}.jpg`)));
     const thumbBg = path.join(dir, 'thumb_bg.jpg');
     if (!fs.existsSync(thumbBg)) todo.unshift([{ prompt: s.script.pack.thumb_prompt }, 'thumb']);
     for (let k = 0; k < todo.length && made < IMAGES_PER_RUN && !quotaHit; k += 3) {
@@ -109,7 +119,7 @@ async function step(r) {
         }
       }));
     }
-    const left = sc.filter((x, i) => x.visual === 'ink' && !fs.existsSync(path.join(dir, `img${String(i).padStart(3, '0')}.jpg`))).length;
+    const left = sc.filter((x, i) => x.visual === 'ink' && !fs.existsSync(path.join(dir, `img${String(src[i]).padStart(3, '0')}.jpg`))).length;
     log(`images made ${made}, left ${left}${quotaHit ? ' (free quota used up, continues next run)' : ''}`);
     if (left || !fs.existsSync(thumbBg)) { save(r); return 'waiting'; }
     s.stage = 'thumb'; save(r);
@@ -125,7 +135,8 @@ async function step(r) {
   if (s.stage === 'render') {
     // UI scenes sit on a blurred copy of the nearest story picture (previous one, else the next, else the thumbnail bg)
     const all = scenes();
-    const imgOf = k => path.join(dir, `img${String(k).padStart(3, '0')}.jpg`);
+    const src = srcOf(all);
+    const imgOf = k => path.join(dir, `img${String(src[k]).padStart(3, '0')}.jpg`);
     const pic = i => {
       for (let k = i; k >= 0; k--) if (all[k].visual === 'ink') return imgOf(k);
       for (let k = i; k < all.length; k++) if (all[k].visual === 'ink') return imgOf(k);
