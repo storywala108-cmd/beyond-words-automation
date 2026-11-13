@@ -1,48 +1,47 @@
 {
-  "at": "2026-11-12T19:15:02.020Z",
+  "at": "2026-11-13T19:13:44.789Z",
   "channels": [
-    "M4 CREATIONS ",
-    "Coov Records Official",
-    "C Drama Master",
-    "Sidhu Brothers Entertainment",
-    "Filmi Flying "
+    "SIVIJ STUDIOS",
+    "Deepfilm",
+    "WebSeries Analyst",
+    "Kuku TV",
+    "AI Kanchan "
   ],
   "wants": [
     {
-      "topic": "Multi-episode serialized romantic drama",
-      "evidence": "M4 Creations and Sidhu Brothers Entertainment both show massive spikes (13x and 373x vsNormal) when releasing sequential episodes of web series.",
-      "strength": 10
-    },
-    {
-      "topic": "IPS/Authority figure vs. Corruption/Injustice",
-      "evidence": "Filmi Flying's top performers feature IPS officers and social justice themes, indicating a strong appetite for 'heroic justice' narratives.",
+      "topic": "Hidden Identity / Secret Millionaire Husband or Beggar Twist",
+      "evidence": "SIVIJ STUDIOS' 'Crorepati Delivery Boy' (vsNormal 5.23), Deepfilm's 'पागल भिखारी... निकला अरबपति' (5.3M views), Kuku TV's 'The Hidden Hero' (vsNormal 2.92)",
       "strength": 9
     },
     {
-      "topic": "High-production value musical series",
-      "evidence": "Coov Records' top video (Jagdalpur) shows that audiences engage deeply with cinematic, music-driven storytelling.",
+      "topic": "Mother/Daughter Humiliation to High Rank (IAS/SDM/DM) Redemption & Revenge",
+      "evidence": "AI Kanchan's 'ईंट-भट्टे पर माँ का अपमान, बेटी बनी SDM' (vsNormal 200.84) and 'भूखी बहू को घर से निकाला, फिर DM पति...' (vsNormal 48.9)",
+      "strength": 10
+    },
+    {
+      "topic": "Betrayal in Love followed by Triumphant Return",
+      "evidence": "SIVIJ STUDIOS' '8 साल बाद IAS अफसर बनकर लौटा प्रेमी, धोखा देने वाली डॉक्टर प्रेमिका...' (vsNormal 2.36)",
       "strength": 8
     },
     {
-      "topic": "Urdu/Hindi dubbed international dramas",
-      "evidence": "C Drama Master's consistent performance with Chinese dramas suggests a niche but loyal audience for translated foreign family-drama.",
-      "strength": 7
+      "topic": "In-law Cruelty (Mother-in-law/Stepmother) backfiring on rich family",
+      "evidence": "AI Kanchan's 'अमीर घर की बहू को सास ने आधी रात घर से निकाला' (vsNormal 41.56) and Deepfilm's 'सौतेली माँ ने घर से निकाला'",
+      "strength": 9
     }
   ],
   "gaps": [
-    "High-quality, long-form literary adaptations that bridge the gap between traditional Premchand-style themes and modern production values.",
-    "Interactive storytelling where the audience can influence the outcome of the 'love-betrayal' arcs.",
-    "Authentic 'small-town' Indian family dynamics that aren't overly melodramatic but focus on realistic emotional stakes."
+    "High-concept literary storytelling (Premchand-style emotional realism) without relying on absurd fantasy tropes (e.g., every beggar turning out to be a secret royal).",
+    "Satisfying single-video resolution or full movies over dragged-out multi-part series (episodic finales perform far worse, e.g., Crorepati Delivery Boy Ep 5 drops to 0.36 vsNormal).",
+    "Grounded emotional stories focusing on deep family sacrifices rather than purely sensationalist clickbait twists."
   ],
   "saturated": [
-    "Short-form AI-generated content (as seen in the poor performance of Filmi Flying's non-narrative shorts).",
-    "Generic 'Love After Marriage' titles without a strong, unique hook or specific conflict.",
-    "Low-effort 'IELTS/Punjabi youth' comedy sketches which are currently underperforming compared to scripted drama."
+    "Secret billionaire disguised as a beggar/waiter/auto-driver.",
+    "Cruel stepmother/aunt kicking out innocent daughter for property.",
+    "Over-exaggerated revenge plots lacking logical emotional grounding."
   ],
   "title_patterns": [
-    "Use of emojis (❤️, 🔥) to signal emotional intensity.",
-    "Episode numbering (Episode 1, Episode 2) to encourage binge-watching.",
-    "High-stakes conflict in titles (e.g., 'IPS Madam', 'Corruption', 'Betrayal', 'Widow').",
-    "Direct questions in titles to pique curiosity (e.g., 'Why did she call him at midnight?')."
+    "[Extreme Insult/Poverty] + [Shocking True Power/IAS/SDM Rank] + [Dramatic Revenge/Shocking Result]",
+    "[Insult of Wife/Mother] + [Husband/Son Reveals Secret Royalty/Wealth] + [Curiosity Hook: फिर जो हुआ/उड़ गए होश]",
+    "Use of highly dramatic Hindi emotional hooks ending in unresolved cliffhangers (...फिर बेटे ने जो किया 😭💔)"
   ]
 }
