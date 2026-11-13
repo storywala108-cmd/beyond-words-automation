@@ -53,6 +53,8 @@ export function renderVideo(scenes, dir, { musicFiles = [], vcodec = ['libx264',
   scenes.forEach((sc, i) => {
     sc.len = frames(sc.vo + GAP + (i < scenes.length - 1 ? XF : 0)) / FPS;
     const out = path.join(clipsDir, `c${String(i).padStart(3, '0')}.mp4`);
+    // UI state times are needed for the chime track even when the clip already exists (resumed render)
+    if (sc.visual === 'ui' && sc.uiStates?.length) { const N0 = sc.uiStates.length, sp = Math.max(0.6, sc.len * 0.75); sc.uiTimes = sc.uiStates.map((_, k) => +(0.25 + k * sp / N0).toFixed(2)); }
     if (fs.existsSync(out)) return;
     const n = frames(sc.len);
     const card = '';
