@@ -1,47 +1,48 @@
 {
-  "at": "2026-11-13T19:13:44.789Z",
+  "at": "2026-11-14T01:21:19.061Z",
   "channels": [
-    "SIVIJ STUDIOS",
-    "Deepfilm",
-    "WebSeries Analyst",
-    "Kuku TV",
-    "AI Kanchan "
+    "Arooj Narrate",
+    "Fictional Studio TV",
+    "GK Hindi Stories 1m",
+    "Drama Basti",
+    "U P Story"
   ],
   "wants": [
     {
-      "topic": "Hidden Identity / Secret Millionaire Husband or Beggar Twist",
-      "evidence": "SIVIJ STUDIOS' 'Crorepati Delivery Boy' (vsNormal 5.23), Deepfilm's 'पागल भिखारी... निकला अरबपति' (5.3M views), Kuku TV's 'The Hidden Hero' (vsNormal 2.92)",
-      "strength": 9
-    },
-    {
-      "topic": "Mother/Daughter Humiliation to High Rank (IAS/SDM/DM) Redemption & Revenge",
-      "evidence": "AI Kanchan's 'ईंट-भट्टे पर माँ का अपमान, बेटी बनी SDM' (vsNormal 200.84) and 'भूखी बहू को घर से निकाला, फिर DM पति...' (vsNormal 48.9)",
+      "topic": "Cruel stepmother forcing daughter into marriage with a seemingly poor/mad/handicapped beggar who secretly holds a billionaire identity or high status",
+      "evidence": "Arooj Narrate's best videos (vsNormal 428.08x, 147.19x), Drama Basti's top video (vsNormal 109.63x), and U P Story's top performing series (vsNormal 10.36x)",
       "strength": 10
     },
     {
-      "topic": "Betrayal in Love followed by Triumphant Return",
-      "evidence": "SIVIJ STUDIOS' '8 साल बाद IAS अफसर बनकर लौटा प्रेमी, धोखा देने वाली डॉक्टर प्रेमिका...' (vsNormal 2.36)",
+      "topic": "Impoverished or humble protagonist performing an unselfish act of hospitality/kindness to a stranger on a fateful/stormy night, leading to an incredible revelation",
+      "evidence": "GK Hindi Stories top performers (vsNormal 814.17x for poor girl serving water, 86.94x for rich widow inviting poor shepherd)",
+      "strength": 9
+    },
+    {
+      "topic": "Pregnant woman abandoned or accused falsely, taken in by a humble outcast/beggar who reveals a high-status secret",
+      "evidence": "Arooj Narrate video 'गर्भवती औरत की मांग भरने वाले भिखारी...' (vsNormal 261.27x)",
       "strength": 8
     },
     {
-      "topic": "In-law Cruelty (Mother-in-law/Stepmother) backfiring on rich family",
-      "evidence": "AI Kanchan's 'अमीर घर की बहू को सास ने आधी रात घर से निकाला' (vsNormal 41.56) and Deepfilm's 'सौतेली माँ ने घर से निकाला'",
-      "strength": 9
+      "topic": "High-stakes palace/royal mystery or taboo romance featuring night challenges or legendary folk tunes",
+      "evidence": "Fictional Studio TV's 100th night princess story (vsNormal 9.6x) and flute tune romance (vsNormal 1.46x)",
+      "strength": 7
     }
   ],
   "gaps": [
-    "High-concept literary storytelling (Premchand-style emotional realism) without relying on absurd fantasy tropes (e.g., every beggar turning out to be a secret royal).",
-    "Satisfying single-video resolution or full movies over dragged-out multi-part series (episodic finales perform far worse, e.g., Crorepati Delivery Boy Ep 5 drops to 0.36 vsNormal).",
-    "Grounded emotional stories focusing on deep family sacrifices rather than purely sensationalist clickbait twists."
+    "Realistic, high-quality Premchand-style moral dilemmas without relying on overused billionaire-in-disguise tropes",
+    "Seamless multi-part narrative extensions (Part 2s) that retain the emotional depth and view velocity of Part 1",
+    "Stories exploring genuine rural/historical romance and pride-shattering drama grounded in emotional realism"
   ],
   "saturated": [
-    "Secret billionaire disguised as a beggar/waiter/auto-driver.",
-    "Cruel stepmother/aunt kicking out innocent daughter for property.",
-    "Over-exaggerated revenge plots lacking logical emotional grounding."
+    "Modern instant-revenge tropes ('Insulted waiter/girl returns years later as SDM/IAS/DM')",
+    "Generic showroom insult stories ('Ameer saas ka ahankar' / showroom humiliation)",
+    "Aghori horror stories shoehorned into family drama channels"
   ],
   "title_patterns": [
-    "[Extreme Insult/Poverty] + [Shocking True Power/IAS/SDM Rank] + [Dramatic Revenge/Shocking Result]",
-    "[Insult of Wife/Mother] + [Husband/Son Reveals Secret Royalty/Wealth] + [Curiosity Hook: फिर जो हुआ/उड़ गए होश]",
-    "Use of highly dramatic Hindi emotional hooks ending in unresolved cliffhangers (...फिर बेटे ने जो किया 😭💔)"
+    "सौतेली माँ ने [Cruel Act]... मगर [Beggar Secret / Secret Identity Twist] 😱💔",
+    "[Humble Person] ने [Stranger] को [Kind Act], फिर जो हुआ... [Dramatic Consequence]",
+    "[Number/Taboo Hook, e.g. 99 मर्दों के बाद...] जब [Intriguing Event] 😱",
+    "[Beggarly Husband] निकला [Billionaire Secret / High Caste Origin] (भाग 1/2)"
   ]
 }
