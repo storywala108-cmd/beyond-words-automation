@@ -2,17 +2,17 @@
   "channels": {
     "UCVMsxTictR3Z3X0ALoZeLCA": {
       "title": "AI Kanchan ",
-      "hits": 5,
-      "outlierSum": 250,
+      "hits": 6,
+      "outlierSum": 300,
       "scannedAt": "2026-11-13T19:13:33.850Z",
-      "subs": 35100,
-      "lastSeen": "2026-11-14T01:21:01.480Z"
+      "subs": 35400,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
     },
     "UCAYgQcsyF0msiYWo0EuU_Jw": {
       "title": "Toons Online",
       "hits": 1,
       "outlierSum": 50,
-      "scannedAt": "2026-11-12T12:46:34.537Z",
+      "scannedAt": "2026-11-15T07:17:06.316Z",
       "subs": 12600,
       "lastSeen": "2026-11-12T12:46:33.867Z"
     },
@@ -220,7 +220,7 @@
       "title": "TOON VANI",
       "hits": 1,
       "outlierSum": 50,
-      "scannedAt": "2026-11-12T14:22:03.529Z",
+      "scannedAt": "2026-11-15T07:17:06.566Z",
       "subs": 63900,
       "lastSeen": "2026-11-12T14:22:03.126Z"
     },
@@ -236,7 +236,7 @@
       "title": "Kahaniyon Ka Safar",
       "hits": 2,
       "outlierSum": 100,
-      "scannedAt": "2026-11-12T14:22:03.951Z",
+      "scannedAt": "2026-11-15T07:17:06.805Z",
       "subs": 32400,
       "lastSeen": "2026-11-14T01:21:01.480Z"
     },
@@ -610,11 +610,11 @@
     },
     "UChb4rtXR7L5q64Z00xXwB-A": {
       "title": "Deepfilm",
-      "hits": 1,
-      "outlierSum": 18.1,
+      "hits": 2,
+      "outlierSum": 68.1,
       "scannedAt": "2026-11-13T19:13:31.714Z",
-      "subs": 69200,
-      "lastSeen": "2026-11-13T19:13:30.837Z"
+      "subs": 71200,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
     },
     "UCLdeifTtYdFcU3f7UyFb1VQ": {
       "title": "SIVIJ STUDIOS",
@@ -834,11 +834,11 @@
     },
     "UCpcbHg6Ef__LO8FA64sO5nw": {
       "title": "AI Story Tool",
-      "hits": 1,
-      "outlierSum": 37.54,
-      "scannedAt": null,
+      "hits": 3,
+      "outlierSum": 80.66000000000001,
+      "scannedAt": "2026-11-15T07:17:05.616Z",
       "subs": 129000,
-      "lastSeen": "2026-11-14T01:21:01.480Z"
+      "lastSeen": "2026-11-15T07:17:05.149Z"
     },
     "UCWRnmcyOju-1ceOdS4v4zSw": {
       "title": "Majedar Toons ",
@@ -858,11 +858,11 @@
     },
     "UCTjrSvZ-vh2wflLc8IQnBtQ": {
       "title": "U P Story",
-      "hits": 1,
-      "outlierSum": 50,
+      "hits": 3,
+      "outlierSum": 114.78999999999999,
       "scannedAt": "2026-11-14T01:21:03.704Z",
-      "subs": 12200,
-      "lastSeen": "2026-11-14T01:21:01.480Z"
+      "subs": 12500,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
     },
     "UCnCa6ql0NBf7tpHGk_ffQKA": {
       "title": "Kahani Adda",
@@ -951,6 +951,198 @@
       "scannedAt": null,
       "subs": 99600,
       "lastSeen": "2026-11-14T01:21:01.480Z"
+    },
+    "UCzQ2A7-Qip_gv8PeuqVRu_A": {
+      "title": "Anaya Story World",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 769,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCDlOd_kCkD2HalRnJqufoug": {
+      "title": "Ghibli King",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 8980,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCGbOFXixg5ic9DgI50NvU1Q": {
+      "title": "Aarohi Myths 1.5M",
+      "hits": 1,
+      "outlierSum": 38.5,
+      "scannedAt": "2026-11-15T07:17:05.984Z",
+      "subs": 20900,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCHN2Xj6z_XBVKT49XDFv7Tg": {
+      "title": "Drama empire 21M",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 7800,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCT8WNREEWsS-Y5UIHXccCQw": {
+      "title": "Eisa Stories",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 1920,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCMjBKiBwtpaXwYBvyKhSUzQ": {
+      "title": "Kahani Ki Baazi",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 476,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCc4BftlJ1yYrRd6KNMk0ezg": {
+      "title": "𝐑𝐨𝐲𝐚𝐥 𝐒𝐭𝐨𝐫𝐲 𝐓𝐕",
+      "hits": 1,
+      "outlierSum": 17.8,
+      "scannedAt": null,
+      "subs": 58600,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCKbeK9fxuDywb9QHhgNjfwA": {
+      "title": "Seya ki kahani",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 2030,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCZstwahUAKMujQlzcX120xQ": {
+      "title": "chahat hai jannat ki",
+      "hits": 1,
+      "outlierSum": 22.15,
+      "scannedAt": null,
+      "subs": 64700,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCp_mj0lVFkJrREEqsYv5u7w": {
+      "title": "JC Story World",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 1290,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCXMqxmfI0OMr4nLV2nvSwVQ": {
+      "title": "Moral Ai Stories",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 4610,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCLOoFHjAfOkIJ6z1iyPjfdw": {
+      "title": "Story Baatli",
+      "hits": 1,
+      "outlierSum": 9.71,
+      "scannedAt": null,
+      "subs": 103000,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCYVEsOQQU3O9YdLcEZ8nqvg": {
+      "title": "Factz dim",
+      "hits": 1,
+      "outlierSum": 4.36,
+      "scannedAt": null,
+      "subs": 39300,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UChHAATNLzlv3rBorD30HUkQ": {
+      "title": "drama wala",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 4380,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCfWcnptFYoVsoVDf_bAHdoQ": {
+      "title": "AI Filmy Kahani",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 1130,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UC5GAgWZ2lSjw2zFL7pDWHHg": {
+      "title": "Gudiya Ka Aangan ",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 2550,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UC8shsH4L_H5fLYEjwGWrYCQ": {
+      "title": "AniDox Hindi",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 107,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UChFg7bp_HI6SvBNYOJ4S8Gg": {
+      "title": "Wah Drama Wah",
+      "hits": 1,
+      "outlierSum": 25.11,
+      "scannedAt": null,
+      "subs": 4380,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCbYZxzIggP4xmgsYouCySXA": {
+      "title": "HIJABI ADVISOR ",
+      "hits": 1,
+      "outlierSum": 4.2,
+      "scannedAt": null,
+      "subs": 46700,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCMh8zDoqWXHbViO_aCOo0sQ": {
+      "title": "ZB VILLAGE TOONS",
+      "hits": 1,
+      "outlierSum": 14.51,
+      "scannedAt": null,
+      "subs": 5920,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UC3JidnhMjT7_8MCThouHklw": {
+      "title": "Hindi Story ",
+      "hits": 1,
+      "outlierSum": 3.83,
+      "scannedAt": null,
+      "subs": 34800,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UC1v6JFnBvUEMvUhAgA4aoIw": {
+      "title": "Kahani Sanskar TV ",
+      "hits": 1,
+      "outlierSum": 9.78,
+      "scannedAt": null,
+      "subs": 13900,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCLor1F-ay1enU2J_KM9BFVg": {
+      "title": "Kahani Ka Mod",
+      "hits": 1,
+      "outlierSum": 21.71,
+      "scannedAt": null,
+      "subs": 94,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UCwV8cCjK3Z1Yv3QbIpdvNRg": {
+      "title": "Sick 4 Drama",
+      "hits": 1,
+      "outlierSum": 0.33,
+      "scannedAt": null,
+      "subs": 484000,
+      "lastSeen": "2026-11-15T07:17:05.149Z"
     }
   }
 }

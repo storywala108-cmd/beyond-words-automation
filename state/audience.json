@@ -1,48 +1,46 @@
 {
-  "at": "2026-11-14T01:21:19.061Z",
+  "at": "2026-11-15T07:17:23.894Z",
   "channels": [
-    "Arooj Narrate",
-    "Fictional Studio TV",
-    "GK Hindi Stories 1m",
-    "Drama Basti",
-    "U P Story"
+    "AI Story Tool",
+    "Aarohi Myths 1.5M",
+    "Toons Online",
+    "TOON VANI",
+    "Kahaniyon Ka Safar"
   ],
   "wants": [
     {
-      "topic": "Cruel stepmother forcing daughter into marriage with a seemingly poor/mad/handicapped beggar who secretly holds a billionaire identity or high status",
-      "evidence": "Arooj Narrate's best videos (vsNormal 428.08x, 147.19x), Drama Basti's top video (vsNormal 109.63x), and U P Story's top performing series (vsNormal 10.36x)",
+      "topic": "Son returning home from city to discover extreme mistreatment/hard labor of parents caused by cruel daughter-in-law",
+      "evidence": "AI Story Tool (k5wqL_7Dv4w - 13.19x vsNormal) and Aarohi Myths (dA7T2P-MQQ8 - 26.53x vsNormal)",
       "strength": 10
     },
     {
-      "topic": "Impoverished or humble protagonist performing an unselfish act of hospitality/kindness to a stranger on a fateful/stormy night, leading to an incredible revelation",
-      "evidence": "GK Hindi Stories top performers (vsNormal 814.17x for poor girl serving water, 86.94x for rich widow inviting poor shepherd)",
+      "topic": "Class inversion and status reversal (e.g., high-ranking DSP wife bowing to sweeper husband, disguised rich heir taking revenge)",
+      "evidence": "Kahaniyon Ka Safar (p8Z5cliMVsw - 2.65M views) and Aarohi Myths (GE-3nnLLw4I - 14.14x vsNormal)",
       "strength": 9
     },
     {
-      "topic": "Pregnant woman abandoned or accused falsely, taken in by a humble outcast/beggar who reveals a high-status secret",
-      "evidence": "Arooj Narrate video 'गर्भवती औरत की मांग भरने वाले भिखारी...' (vsNormal 261.27x)",
+      "topic": "Vulnerable female family member (pregnant DIL or widowed SIL) facing cruelty, followed by sudden heroic intervention by husband/son",
+      "evidence": "AI Story Tool (FxdZh_AA2sQ - 2.93x vsNormal) and Aarohi Myths (KPPMP5mEv_I - 25.39x vsNormal)",
       "strength": 8
     },
     {
-      "topic": "High-stakes palace/royal mystery or taboo romance featuring night challenges or legendary folk tunes",
-      "evidence": "Fictional Studio TV's 100th night princess story (vsNormal 9.6x) and flute tune romance (vsNormal 1.46x)",
-      "strength": 7
+      "topic": "Seasonal/Festive emotional realism highlighting the struggle and dignity of poor families during festivals",
+      "evidence": "Toons Online (vCfIPK44WUM - 54,842x vsNormal viral hit)",
+      "strength": 8
     }
   ],
   "gaps": [
-    "Realistic, high-quality Premchand-style moral dilemmas without relying on overused billionaire-in-disguise tropes",
-    "Seamless multi-part narrative extensions (Part 2s) that retain the emotional depth and view velocity of Part 1",
-    "Stories exploring genuine rural/historical romance and pride-shattering drama grounded in emotional realism"
+    "Realistic, Premchand-style literary portrayals of systemic rural family dynamics that focus on moral dilemmas rather than sensationalized instant-karma or sudden death twists.",
+    "Nuanced post-divorce or marital reconciliation stories that feature grounded psychological growth rather than absurd overnight transformations into high-ranking officers."
   ],
   "saturated": [
-    "Modern instant-revenge tropes ('Insulted waiter/girl returns years later as SDM/IAS/DM')",
-    "Generic showroom insult stories ('Ameer saas ka ahankar' / showroom humiliation)",
-    "Aghori horror stories shoehorned into family drama channels"
+    "Generic cheating husband throwing wife out for a mistress (performed poorly at 0.10x vsNormal).",
+    "Absurd cruelty tropes by stepmothers or aunts (e.g., marrying off girls to beggars or golgappa sellers for shock value, underperforming at 0.04x–0.05x vsNormal).",
+    "Repetitive 'unemployed husband returns as an SP/millionaire' revenge plotlines."
   ],
   "title_patterns": [
-    "सौतेली माँ ने [Cruel Act]... मगर [Beggar Secret / Secret Identity Twist] 😱💔",
-    "[Humble Person] ने [Stranger] को [Kind Act], फिर जो हुआ... [Dramatic Consequence]",
-    "[Number/Taboo Hook, e.g. 99 मर्दों के बाद...] जब [Intriguing Event] 😱",
-    "[Beggarly Husband] निकला [Billionaire Secret / High Caste Origin] (भाग 1/2)"
+    "[Time Period] बाद घर लौटे बेटे ने [Parents' humiliating/shocking state] देखा, ज़ालिम बहू की सच्चाई खुली 😱💔",
+    "[High Status/Role (e.g., DSP/करोड़पति)] के सामने झुक गई/पिघला [Low Status/Role (e.g., सफाईकर्मी/गरीब लड़की)], वजह जानकर उड़ जाएंगे होश!",
+    "[Vulnerable Status (e.g., गर्भवती बहु/विधवा भाभी)] को घर से निकाला/शहर ले गया... फिर जो हुआ! 😱😭"
   ]
 }
