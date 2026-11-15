@@ -19,10 +19,18 @@ const USAGE = path.join(ROOT, 'state', 'kaggle_usage.json');
 const NOTEBOOK = path.join(ROOT, 'kaggle', 'motion_kernel.ipynb');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-const kaggle = (args, timeout = 600000) => execFileSync('kaggle', args, {
+// the kaggle CLI is installed on first use if the runner lacks it (no workflow change needed)
+let cliReady = false;
+function ensureCli() {
+  if (cliReady) return;
+  try { execFileSync('kaggle', ['--version'], { stdio: 'ignore' }); }
+  catch { execFileSync('python', ['-m', 'pip', 'install', '-q', 'kaggle>=1.8'], { stdio: 'inherit', timeout: 600000 }); }
+  cliReady = true;
+}
+const kaggle = (args, timeout = 600000) => (ensureCli(), execFileSync('kaggle', args, {
   encoding: 'utf8', timeout, stdio: ['ignore', 'pipe', 'pipe'],
   env: { ...process.env, KAGGLE_API_TOKEN: env.KAGGLE_API_TOKEN || '', KAGGLE_USERNAME: USER },
-});
+}));
 const readUsage = () => { try { return JSON.parse(fs.readFileSync(USAGE, 'utf8')); } catch { return []; } };
 export function weekMinutes() {
   const since = Date.now() - 7 * 864e5;
