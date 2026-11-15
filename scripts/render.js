@@ -70,6 +70,13 @@ export function renderVideo(scenes, dir, { musicFiles = [], vcodec = ['libx264',
       g += `[b${N}]format=yuv420p,${SET}[v]`;
       ff(['-loop', '1', '-i', sc.img, ...sc.uiStates.flatMap(p => ['-loop', '1', '-i', p]), '-filter_complex', g, '-map', '[v]',
         '-frames:v', String(n), '-r', String(FPS), '-c:v', ...vcodec, out + '.tmp.mp4']);
+    } else if (sc.visual === 'ink' && sc.motion && fs.existsSync(sc.motion)) {
+      // moving clip (MiniMax H3, 832x480, ~5.2 s): upscale, slow down up to 1.6x to fill the scene, then hold the last frame
+      const cd = Math.max(1, dur(sc.motion)), k = Math.min(1.6, Math.max(1, sc.len / cd));
+      ff(['-i', sc.motion, '-an', '-vf',
+        `scale=${W}:${H}:force_original_aspect_ratio=increase:flags=lanczos,crop=${W}:${H},unsharp=5:5:0.5,` +
+        `setpts=${k.toFixed(3)}*PTS,fps=${FPS},tpad=stop_mode=clone:stop_duration=60,trim=duration=${sc.len.toFixed(3)},format=yuv420p,${SET}`,
+        '-r', String(FPS), '-c:v', ...vcodec, out + '.tmp.mp4']);
     } else if (sc.visual === 'map' && sc.mapDir) {
       ff(['-framerate', String(FPS), '-i', path.join(sc.mapDir, 'f%04d.png'),
         '-vf', `scale=${W}:${H},tpad=stop_mode=clone:stop_duration=60,trim=duration=${sc.len}${card},format=yuv420p,${SET}`,

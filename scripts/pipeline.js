@@ -7,6 +7,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ROOT, env, log, tts, TTS_MODELS, fluxImage } from './lib.js';
 import { makeThumb } from './thumb.js';
+import { motionStage } from './motion.js';
 import { researchTrends, pickTopic, nextFormat, nextCategory, CATEGORIES } from './trends.js';
 import { nextEpisode, createSeries, markEpisode, getSeries } from './series.js';
 
@@ -122,6 +123,13 @@ async function step(r) {
     const left = sc.filter((x, i) => x.visual === 'ink' && !fs.existsSync(path.join(dir, `img${String(src[i]).padStart(3, '0')}.jpg`))).length;
     log(`images made ${made}, left ${left}${quotaHit ? ' (free quota used up, continues next run)' : ''}`);
     if (left || !fs.existsSync(thumbBg)) { save(r); return 'waiting'; }
+    s.stage = 'motion'; save(r);
+  }
+  if (s.stage === 'motion') {
+    // owner 2026-11-15: a few key scenes become moving clips on the free Kaggle GPU (MiniMax H3); the rest stay stills
+    const sc = scenes(), src = srcOf(sc);
+    const res = await motionStage(s, dir, sc, src, k => path.join(dir, `img${String(src[k]).padStart(3, '0')}.jpg`), () => save(r));
+    if (res === 'waiting') { save(r); return 'waiting'; }
     s.stage = 'thumb'; save(r);
   }
   if (s.stage === 'thumb') {
@@ -148,7 +156,9 @@ async function step(r) {
       if (x.visual === 'ui') {
         try { uiStates = renderUi(x.ui, path.join(dir, `ui${n}`)); } catch (e) { log('ui', i, 'failed → picture instead:', e.message.slice(0, 100)); }
       }
+      const mot = path.join(dir, `mot${n}.mp4`);
       return { ...x, visual: uiStates ? 'ui' : 'ink', uiStates, img: x.visual === 'ink' ? imgOf(i) : pic(i),
+        motion: x.visual === 'ink' && fs.existsSync(mot) ? mot : null,
         voFile: path.join(dir, `vo${n}.wav`), vo: dur(path.join(dir, `vo${n}.wav`)) };
     });
     // Mixkit tracks are fetched at run time (their licence doesn't allow re-hosting them in a public repo)
