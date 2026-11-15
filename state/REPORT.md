@@ -1,0 +1,6 @@
+# Beyond Words weekly report (2026-11-15)
+
+The initial video shows exceptional retention (99.92%), indicating that the narrative structure of family drama and moral testing is highly engaging for our target audience. However, the view count is currently too low to establish statistical significance regarding reach. The topic of 'moral betrayal and redemption' is a strong hook, but the current title is overly long and may be difficult to read on mobile devices. To scale, we must balance this high-retention storytelling style with more clickable, concise titles that create curiosity without revealing the entire plot. We need to maintain this high-quality production while testing shorter, punchier titles to improve click-through rates.
+
+Rules for next videos:
+Prioritize emotional conflict and moral dilemmas in storytelling.,Ensure the hook in the first 30 seconds addresses the central betrayal.,Keep total video length under 10 minutes to maintain high retention.,Use titles that promise a clear 'lesson learned' or 'justice served' outcome.,Avoid overly long, complex Hindi titles that clutter the thumbnail space.,Focus on relatable family dynamics that trigger immediate audience empathy.,Maintain a steady narrative pace to prevent retention drops during exposition.,Include a clear 'call to action' only after the emotional climax.
