@@ -4,7 +4,7 @@
       "title": "AI Kanchan ",
       "hits": 6,
       "outlierSum": 300,
-      "scannedAt": "2026-11-13T19:13:33.850Z",
+      "scannedAt": "2026-11-18T01:00:09.836Z",
       "subs": 35400,
       "lastSeen": "2026-11-15T07:17:05.149Z"
     },
@@ -460,7 +460,7 @@
       "title": "M4 CREATIONS ",
       "hits": 3,
       "outlierSum": 96.15,
-      "scannedAt": "2026-11-12T19:14:32.012Z",
+      "scannedAt": "2026-11-18T01:00:08.230Z",
       "subs": 117000,
       "lastSeen": "2026-11-12T19:14:31.054Z"
     },
@@ -468,7 +468,7 @@
       "title": "Coov Records Official",
       "hits": 1,
       "outlierSum": 50,
-      "scannedAt": "2026-11-12T19:14:32.386Z",
+      "scannedAt": "2026-11-18T01:00:08.617Z",
       "subs": 32000,
       "lastSeen": "2026-11-12T19:14:31.054Z"
     },
@@ -492,7 +492,7 @@
       "title": "C Drama Master",
       "hits": 1,
       "outlierSum": 37.07,
-      "scannedAt": "2026-11-12T19:14:32.831Z",
+      "scannedAt": "2026-11-18T01:00:09.118Z",
       "subs": 48300,
       "lastSeen": "2026-11-12T19:14:31.055Z"
     },
@@ -612,7 +612,7 @@
       "title": "Deepfilm",
       "hits": 2,
       "outlierSum": 68.1,
-      "scannedAt": "2026-11-13T19:13:31.714Z",
+      "scannedAt": "2026-11-18T01:00:09.449Z",
       "subs": 71200,
       "lastSeen": "2026-11-15T07:17:05.149Z"
     },
@@ -818,11 +818,11 @@
     },
     "UCaQDcHXSF3-Yfj3zgfZEtZg": {
       "title": "GK Hindi Stories 1m",
-      "hits": 1,
-      "outlierSum": 50,
+      "hits": 2,
+      "outlierSum": 100,
       "scannedAt": "2026-11-14T01:21:02.751Z",
-      "subs": 25700,
-      "lastSeen": "2026-11-14T01:21:01.480Z"
+      "subs": 28000,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
     },
     "UCsSc0Ewzuk7D8FGjKG6MTTQ": {
       "title": "Arooj Narrate",
@@ -834,11 +834,11 @@
     },
     "UCpcbHg6Ef__LO8FA64sO5nw": {
       "title": "AI Story Tool",
-      "hits": 3,
-      "outlierSum": 80.66000000000001,
+      "hits": 4,
+      "outlierSum": 122.00000000000001,
       "scannedAt": "2026-11-15T07:17:05.616Z",
-      "subs": 129000,
-      "lastSeen": "2026-11-15T07:17:05.149Z"
+      "subs": 130000,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
     },
     "UCWRnmcyOju-1ceOdS4v4zSw": {
       "title": "Majedar Toons ",
@@ -850,11 +850,11 @@
     },
     "UCGXS4Ko3ocM3y2UUkFWQzJg": {
       "title": "Drama Basti",
-      "hits": 1,
-      "outlierSum": 50,
+      "hits": 2,
+      "outlierSum": 100,
       "scannedAt": "2026-11-14T01:21:02.980Z",
-      "subs": 21600,
-      "lastSeen": "2026-11-14T01:21:01.480Z"
+      "subs": 25100,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
     },
     "UCTjrSvZ-vh2wflLc8IQnBtQ": {
       "title": "U P Story",
@@ -1143,6 +1143,190 @@
       "scannedAt": null,
       "subs": 484000,
       "lastSeen": "2026-11-15T07:17:05.149Z"
+    },
+    "UC0qEm9X_76LC6rxSwqMgE7w": {
+      "title": "Ai Kedo Met",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 7950,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UC-lW5kaIgghbfRkfCIhTTaA": {
+      "title": "Kahaniyon ki दुनिया",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 5760,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCGrWqW5V4V6JagbSIHXu_zg": {
+      "title": "STORY WORLD TV",
+      "hits": 1,
+      "outlierSum": 34.87,
+      "scannedAt": null,
+      "subs": 3180,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UC5yJj8OnlU6f5yKC-QovzjA": {
+      "title": "SadhanaSI",
+      "hits": 1,
+      "outlierSum": 1.38,
+      "scannedAt": null,
+      "subs": 3630000,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UC_dDgys9jZUXzxUlF4Z8Riw": {
+      "title": "Hasmukh Kisse",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 118,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCzQ4WHGn5mo96H7KZ48GeEg": {
+      "title": "Awaaz 34",
+      "hits": 1,
+      "outlierSum": 4.8,
+      "scannedAt": null,
+      "subs": 462000,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCJD3T7WgVdzqHxIxNtIK3YQ": {
+      "title": "Prime Series",
+      "hits": 1,
+      "outlierSum": 34.69,
+      "scannedAt": null,
+      "subs": 4300,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCrLCkvLR9Yzpzs5X6DvrSYQ": {
+      "title": "Kunal Sufiyana",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 1680,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCs1m6woMUV_T3y_h0vQuurQ": {
+      "title": "Cinematic Bharat Films",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 468,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCTfy_zef_VeuWKbM9FF5gsA": {
+      "title": "True Gatha",
+      "hits": 1,
+      "outlierSum": 1.55,
+      "scannedAt": null,
+      "subs": 271000,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UC5c1iExnwkNdXz7oP3xPErQ": {
+      "title": "Movie Climax Bhojpuri",
+      "hits": 1,
+      "outlierSum": 0.51,
+      "scannedAt": null,
+      "subs": 836000,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCPyMQRvFrA6x5dGt04bUvpQ": {
+      "title": "Sofiya's Voice",
+      "hits": 1,
+      "outlierSum": 15.37,
+      "scannedAt": null,
+      "subs": 3150,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCASojjg6HNUr90d0tXn1FBw": {
+      "title": "सास का हुक्म VS बहू का जवाब",
+      "hits": 1,
+      "outlierSum": 3.34,
+      "scannedAt": null,
+      "subs": 3120,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UC_Fv1ktG2l9qCbvP6Ke9IGw": {
+      "title": "SANJAY PANDIT KI VIDEO",
+      "hits": 1,
+      "outlierSum": 1.22,
+      "scannedAt": null,
+      "subs": 14000,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCnrZ_3M6JYPr1Uo8SYAW9Rw": {
+      "title": "देसी फिल्मी धमाल",
+      "hits": 1,
+      "outlierSum": 5.81,
+      "scannedAt": null,
+      "subs": 503,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCRVyxC_v4R9g8jOlB7ieKTQ": {
+      "title": "Bhumi Ki Duniya",
+      "hits": 1,
+      "outlierSum": 3.15,
+      "scannedAt": null,
+      "subs": 192,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UChhbXD4r2L0JaR2U15B35IQ": {
+      "title": "a villagefood 1897",
+      "hits": 1,
+      "outlierSum": 3.83,
+      "scannedAt": null,
+      "subs": 517,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCUDmDboR-uRhFdClMzU1Hzg": {
+      "title": "Ewe Story Vibes",
+      "hits": 1,
+      "outlierSum": 4.5,
+      "scannedAt": null,
+      "subs": 869,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCPzFGnomzRwOnpRRY9P652A": {
+      "title": "MysteriousTale",
+      "hits": 1,
+      "outlierSum": 0.85,
+      "scannedAt": null,
+      "subs": 5690,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCD5qYNPvHCnstenSKRN0Pvg": {
+      "title": "UTSAV SHOW ",
+      "hits": 1,
+      "outlierSum": 2.82,
+      "scannedAt": null,
+      "subs": 15,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UC3131pqC6EL8msGDaeejxbw": {
+      "title": "Story Hindi",
+      "hits": 1,
+      "outlierSum": 1.57,
+      "scannedAt": null,
+      "subs": 270,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UC9iAMNTNrqUIhBpzgrhtMqQ": {
+      "title": "Dream Story Voice",
+      "hits": 1,
+      "outlierSum": 1.04,
+      "scannedAt": null,
+      "subs": 2940,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
+    },
+    "UCi9RajnnAeZnSa8KErYFsQA": {
+      "title": "Indrakshi Music Official",
+      "hits": 1,
+      "outlierSum": 0.32,
+      "scannedAt": null,
+      "subs": 9580,
+      "lastSeen": "2026-11-18T01:00:07.842Z"
     }
   }
 }

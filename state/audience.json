@@ -1,46 +1,47 @@
 {
-  "at": "2026-11-15T07:17:23.894Z",
+  "at": "2026-11-18T01:00:29.753Z",
   "channels": [
-    "AI Story Tool",
-    "Aarohi Myths 1.5M",
-    "Toons Online",
-    "TOON VANI",
-    "Kahaniyon Ka Safar"
+    "M4 CREATIONS ",
+    "Coov Records Official",
+    "C Drama Master",
+    "Deepfilm",
+    "AI Kanchan "
   ],
   "wants": [
     {
-      "topic": "Son returning home from city to discover extreme mistreatment/hard labor of parents caused by cruel daughter-in-law",
-      "evidence": "AI Story Tool (k5wqL_7Dv4w - 13.19x vsNormal) and Aarohi Myths (dA7T2P-MQQ8 - 26.53x vsNormal)",
+      "topic": "Revenge of the Underdog (Daughter/Bahu becoming SDM/DM)",
+      "evidence": "AI Kanchan's massive over-performance on SDM/DM transformation stories (vsNormal 220+)",
       "strength": 10
     },
     {
-      "topic": "Class inversion and status reversal (e.g., high-ranking DSP wife bowing to sweeper husband, disguised rich heir taking revenge)",
-      "evidence": "Kahaniyon Ka Safar (p8Z5cliMVsw - 2.65M views) and Aarohi Myths (GE-3nnLLw4I - 14.14x vsNormal)",
+      "topic": "Multi-part serialised drama",
+      "evidence": "M4 Creations and Deepfilm's high engagement on 'Part 2' and 'Episode' structures",
       "strength": 9
     },
     {
-      "topic": "Vulnerable female family member (pregnant DIL or widowed SIL) facing cruelty, followed by sudden heroic intervention by husband/son",
-      "evidence": "AI Story Tool (FxdZh_AA2sQ - 2.93x vsNormal) and Aarohi Myths (KPPMP5mEv_I - 25.39x vsNormal)",
+      "topic": "Romantic series with high production value",
+      "evidence": "M4 Creations' 'Marriage Melodies' consistently hitting 7-14x normal view rates",
       "strength": 8
     },
     {
-      "topic": "Seasonal/Festive emotional realism highlighting the struggle and dignity of poor families during festivals",
-      "evidence": "Toons Online (vCfIPK44WUM - 54,842x vsNormal viral hit)",
-      "strength": 8
+      "topic": "Social injustice against women/daughters-in-law",
+      "evidence": "High view counts on titles featuring 'Saas' (Mother-in-law) cruelty and 'Ghar se nikala' (kicked out of the house) tropes",
+      "strength": 9
     }
   ],
   "gaps": [
-    "Realistic, Premchand-style literary portrayals of systemic rural family dynamics that focus on moral dilemmas rather than sensationalized instant-karma or sudden death twists.",
-    "Nuanced post-divorce or marital reconciliation stories that feature grounded psychological growth rather than absurd overnight transformations into high-ranking officers."
+    "Lack of authentic rural-urban conflict resolution that feels grounded rather than purely cinematic",
+    "Viewers often express frustration with cliffhangers that are not resolved in a timely manner",
+    "Need for more 'redemption arcs' for villains rather than just pure punishment-based endings"
   ],
   "saturated": [
-    "Generic cheating husband throwing wife out for a mistress (performed poorly at 0.10x vsNormal).",
-    "Absurd cruelty tropes by stepmothers or aunts (e.g., marrying off girls to beggars or golgappa sellers for shock value, underperforming at 0.04x–0.05x vsNormal).",
-    "Repetitive 'unemployed husband returns as an SP/millionaire' revenge plotlines."
+    "Generic 'Poor beggar turns out to be a billionaire' tropes (Deepfilm's lower-performing content suggests audience fatigue)",
+    "Short-form comedy skits (M4 Creations' weakest videos are low-effort comedy vs their high-effort drama)",
+    "Overly simplistic 'Evil Stepmother' stories without a strong character development twist"
   ],
   "title_patterns": [
-    "[Time Period] बाद घर लौटे बेटे ने [Parents' humiliating/shocking state] देखा, ज़ालिम बहू की सच्चाई खुली 😱💔",
-    "[High Status/Role (e.g., DSP/करोड़पति)] के सामने झुक गई/पिघला [Low Status/Role (e.g., सफाईकर्मी/गरीब लड़की)], वजह जानकर उड़ जाएंगे होश!",
-    "[Vulnerable Status (e.g., गर्भवती बहु/विधवा भाभी)] को घर से निकाला/शहर ले गया... फिर जो हुआ! 😱😭"
+    "The 'Transformation' Hook: [Situation of abuse] + [Dramatic shift/Title earned] + [Emotional payoff]",
+    "The 'Serial' Hook: [Title of Series] + [Episode Number] + [Romantic/Dramatic Tagline]",
+    "The 'Emotional' Hook: [Descriptive tragedy] + [Question/Cliffhanger] + [Emoji]"
   ]
 }
