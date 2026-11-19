@@ -1,47 +1,47 @@
 {
-  "at": "2026-11-18T01:00:29.753Z",
+  "at": "2026-11-19T00:27:10.952Z",
   "channels": [
-    "M4 CREATIONS ",
-    "Coov Records Official",
-    "C Drama Master",
-    "Deepfilm",
-    "AI Kanchan "
+    "FaKT Dharmik Katha",
+    "Arooj Narrate",
+    "Fictional Studio TV",
+    "GK Hindi Stories 1m",
+    "Drama Basti"
   ],
   "wants": [
     {
-      "topic": "Revenge of the Underdog (Daughter/Bahu becoming SDM/DM)",
-      "evidence": "AI Kanchan's massive over-performance on SDM/DM transformation stories (vsNormal 220+)",
+      "topic": "Mistreated stepdaughter marrying a secret millionaire/beggar with hidden identity",
+      "evidence": "Drama Basti's 'सौतेली माँ ने बेटी को रखा पागल भिखारी...' (vsNormal 108.22, 21.4M views) & Arooj Narrate's 'सौतेली माँ ने बेटी को भिखारी के हवाले किया...' (vsNormal 185.66, 4.2M views)",
       "strength": 10
     },
     {
-      "topic": "Multi-part serialised drama",
-      "evidence": "M4 Creations and Deepfilm's high engagement on 'Part 2' and 'Episode' structures",
+      "topic": "Acts of unexpected kindness to poor strangers leading to massive plot twists",
+      "evidence": "GK Hindi Stories 1m's 'प्यासे मुसाफिर को गरीब लड़की ने पानी पिलाया...' (vsNormal 855.48, 12.1M views)",
       "strength": 9
     },
     {
-      "topic": "Romantic series with high production value",
-      "evidence": "M4 Creations' 'Marriage Melodies' consistently hitting 7-14x normal view rates",
+      "topic": "High-stakes dramatic mysteries with scandalous or tense night settings",
+      "evidence": "Fictional Studio TV's '99 मर्दों के बाद जब 100वीं रात...' (vsNormal 10.37, 15.1M views) & GK Hindi Stories 1m's 'करोड़पति विधवा ने तूफानी रात में...' (vsNormal 88.86)",
       "strength": 8
     },
     {
-      "topic": "Social injustice against women/daughters-in-law",
-      "evidence": "High view counts on titles featuring 'Saas' (Mother-in-law) cruelty and 'Ghar se nikala' (kicked out of the house) tropes",
-      "strength": 9
+      "topic": "Multi-part revenge & justice stories where victimized lead returns in power",
+      "evidence": "Drama Basti's '[PART 2] सौतेली माँ ने बेटी को पागल भिखारी से ब्याहा...' (vsNormal 17.37, 2.7M views) and IAS officer justice story",
+      "strength": 8
     }
   ],
   "gaps": [
-    "Lack of authentic rural-urban conflict resolution that feels grounded rather than purely cinematic",
-    "Viewers often express frustration with cliffhangers that are not resolved in a timely manner",
-    "Need for more 'redemption arcs' for villains rather than just pure punishment-based endings"
+    "Realistic, grounded Premchand-style moral dilemmas focusing on family dignity rather than extreme clickbait tropes",
+    "Properly paced Part 2 resolutions for emotional family betrayal stories where justice is served satisfyingly",
+    "Heart-wrenching classic literary rural Indian family dramas with high narrative depth"
   ],
   "saturated": [
-    "Generic 'Poor beggar turns out to be a billionaire' tropes (Deepfilm's lower-performing content suggests audience fatigue)",
-    "Short-form comedy skits (M4 Creations' weakest videos are low-effort comedy vs their high-effort drama)",
-    "Overly simplistic 'Evil Stepmother' stories without a strong character development twist"
+    "Generic 'Rich Mother-in-Law vs Poor Daughter-in-Law' without twist endings",
+    "Basic showroom/mall disrespect stories ('Showroom mein hua apmaan')",
+    "Low-stakes generic royal romance tales ('Gwala raja ban gaya')"
   ],
   "title_patterns": [
-    "The 'Transformation' Hook: [Situation of abuse] + [Dramatic shift/Title earned] + [Emotional payoff]",
-    "The 'Serial' Hook: [Title of Series] + [Episode Number] + [Romantic/Dramatic Tagline]",
-    "The 'Emotional' Hook: [Descriptive tragedy] + [Question/Cliffhanger] + [Emoji]"
+    "[Cruel Relatives' Action] + [Hidden Identity/Secret revealed] + 😱💔",
+    "[Shocking Extreme Premise/Number] + [Curiosity Hook: '...फिर जो हुआ/जब खुला असली राज़']",
+    "Festival Special + Betrayal/Redemption storyline ([PART 2] / Karwa Chauth Special)"
   ]
 }
