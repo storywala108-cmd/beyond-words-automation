@@ -1,47 +1,47 @@
 {
-  "at": "2026-11-19T00:27:10.952Z",
+  "at": "2026-11-21T00:01:30.867Z",
   "channels": [
-    "FaKT Dharmik Katha",
-    "Arooj Narrate",
-    "Fictional Studio TV",
-    "GK Hindi Stories 1m",
-    "Drama Basti"
+    "MESTAR STORY",
+    "U P Story",
+    "AI Story Tool",
+    "Toons Online",
+    "TOON VANI"
   ],
   "wants": [
     {
-      "topic": "Mistreated stepdaughter marrying a secret millionaire/beggar with hidden identity",
-      "evidence": "Drama Basti's 'सौतेली माँ ने बेटी को रखा पागल भिखारी...' (vsNormal 108.22, 21.4M views) & Arooj Narrate's 'सौतेली माँ ने बेटी को भिखारी के हवाले किया...' (vsNormal 185.66, 4.2M views)",
+      "topic": "Son returning from the city to discover mistreated parents or abandoned wife, delivering immediate karma/justice",
+      "evidence": "AI Story Tool video 'शहर से लौटते ही बेटे ने माँ बाप को इस हालत मे देखकर लिया बड़ा फैशला' (vsNormal: 66.23, 5.7M views) and 'बारिश में गर्भवती बहु को घर से निकाला' (vsNormal: 13.74)",
       "strength": 10
     },
     {
-      "topic": "Acts of unexpected kindness to poor strangers leading to massive plot twists",
-      "evidence": "GK Hindi Stories 1m's 'प्यासे मुसाफिर को गरीब लड़की ने पानी पिलाया...' (vsNormal 855.48, 12.1M views)",
+      "topic": "Cruel stepmother/in-laws marrying daughter to a seemingly poor man/beggar who turns out to be a secret billionaire or high official",
+      "evidence": "U P Story video 'सौतेली माँ ने भिखारी से करा दी शादी, पर वो निकला अरबपति का बेटा!' (vsNormal: 11.84, 2.7M views) and MESTAR STORY 'गरीब समझकर सबने किया अपमान... अर्जुन निकला असली DM' (vsNormal: 63.16)",
       "strength": 9
     },
     {
-      "topic": "High-stakes dramatic mysteries with scandalous or tense night settings",
-      "evidence": "Fictional Studio TV's '99 मर्दों के बाद जब 100वीं रात...' (vsNormal 10.37, 15.1M views) & GK Hindi Stories 1m's 'करोड़पति विधवा ने तूफानी रात में...' (vsNormal 88.86)",
+      "topic": "Festival-themed family hardship and emotional resilience (e.g., Gareeb Ki Diwali)",
+      "evidence": "Toons Online video 'गरीब की दिवाली | एक गरीब परिवार की दिल छू लेने वाली कहानी' (vsNormal: 35540.65, 1.5M views)",
       "strength": 8
     },
     {
-      "topic": "Multi-part revenge & justice stories where victimized lead returns in power",
-      "evidence": "Drama Basti's '[PART 2] सौतेली माँ ने बेटी को पागल भिखारी से ब्याहा...' (vsNormal 17.37, 2.7M views) and IAS officer justice story",
-      "strength": 8
+      "topic": "Multi-part family drama sagas with heirloom/identity clues (lockets, twin secrets)",
+      "evidence": "U P Story video 'खोई हुई बेटी का लॉकेट और जुड़वाँ भाई का रहस्य (भाग 2)' maintaining strong retention across episodes",
+      "strength": 7
     }
   ],
   "gaps": [
-    "Realistic, grounded Premchand-style moral dilemmas focusing on family dignity rather than extreme clickbait tropes",
-    "Properly paced Part 2 resolutions for emotional family betrayal stories where justice is served satisfyingly",
-    "Heart-wrenching classic literary rural Indian family dramas with high narrative depth"
+    "Realistic, Premchand-style grounded rural social dramas without reliance on exaggerated 'secret billionaire' tropes",
+    "Deeply layered stories focusing on the resilient abandoned wife taking independent moral/legal revenge rather than waiting for a heroic husband to return",
+    "Nuanced multi-generational family conflicts exploring modern urban vs traditional rural values beyond simple villainy"
   ],
   "saturated": [
-    "Generic 'Rich Mother-in-Law vs Poor Daughter-in-Law' without twist endings",
-    "Basic showroom/mall disrespect stories ('Showroom mein hua apmaan')",
-    "Low-stakes generic royal romance tales ('Gwala raja ban gaya')"
+    "Generic 'Beggar husband is secretly a billionaire' (भिखारी बना पति निकला अरबों का वारिस) cloned across multiple small channels",
+    "Overused 'disrespected at airport/restaurant -> turns out to be SDM/Boss' (showing up in weakest videos like U P Story's waiter to SDM concept)",
+    "English-titled or fantasy/giant-creature shorts mixed into Hindi drama channels"
   ],
   "title_patterns": [
-    "[Cruel Relatives' Action] + [Hidden Identity/Secret revealed] + 😱💔",
-    "[Shocking Extreme Premise/Number] + [Curiosity Hook: '...फिर जो हुआ/जब खुला असली राज़']",
-    "Festival Special + Betrayal/Redemption storyline ([PART 2] / Karwa Chauth Special)"
+    "[Cruel Action by Family] + [Unexpected Return/Event] + [Shock/Emotional Hook] (e.g., 'बारिश में गर्भवती बहु को घर से निकाला, तभी अचानक लौट आया बेटा... फिर जो हुआ! 😱💔')",
+    "[Underestimation/Disrespect] + [Secret Status Revealed] + [Emotional Drama Tag] (e.g., 'गरीब समझकर सबने किया अपमान 😢 अर्जुन निकला असली DM | दिल छू लेने वाली कहानी')",
+    "[Betrayal Premise] + [Identity Secret Twist] + [Part Indicator] (e.g., 'सौतेली माँ ने भिखारी से करा दी शादी, पर वो निकला अरबपति का बेटा!')"
   ]
 }
