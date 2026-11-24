@@ -1,47 +1,42 @@
 {
-  "at": "2026-11-21T00:01:30.867Z",
+  "at": "2026-11-24T03:59:40.207Z",
   "channels": [
-    "MESTAR STORY",
-    "U P Story",
-    "AI Story Tool",
-    "Toons Online",
-    "TOON VANI"
+    "Kahaniyon Ka Safar",
+    "M4 CREATIONS ",
+    "Coov Records Official",
+    "Deepfilm",
+    "AI Kanchan "
   ],
   "wants": [
     {
-      "topic": "Son returning from the city to discover mistreated parents or abandoned wife, delivering immediate karma/justice",
-      "evidence": "AI Story Tool video 'शहर से लौटते ही बेटे ने माँ बाप को इस हालत मे देखकर लिया बड़ा फैशला' (vsNormal: 66.23, 5.7M views) and 'बारिश में गर्भवती बहु को घर से निकाला' (vsNormal: 13.74)",
+      "topic": "Underdog Revenge & Status Elevation (Insulted family member returns as high officer/SDM/DM to demand accountability)",
+      "evidence": "AI Kanchan's 'ईंट-भट्टे पर माँ का अपमान, बेटी बनी SDM' (242.58x vsNormal) and 'DM पति ने लौटकर ऐसा किया' (56.71x vsNormal)",
       "strength": 10
     },
     {
-      "topic": "Cruel stepmother/in-laws marrying daughter to a seemingly poor man/beggar who turns out to be a secret billionaire or high official",
-      "evidence": "U P Story video 'सौतेली माँ ने भिखारी से करा दी शादी, पर वो निकला अरबपति का बेटा!' (vsNormal: 11.84, 2.7M views) and MESTAR STORY 'गरीब समझकर सबने किया अपमान... अर्जुन निकला असली DM' (vsNormal: 63.16)",
+      "topic": "Romantic post-marriage drama / Episodic serials on love after marriage",
+      "evidence": "M4 CREATIONS' 'Marriage Melodies Episode 1' (10.9x vsNormal) and Episode 4 (10.84x vsNormal)",
       "strength": 9
     },
     {
-      "topic": "Festival-themed family hardship and emotional resilience (e.g., Gareeb Ki Diwali)",
-      "evidence": "Toons Online video 'गरीब की दिवाली | एक गरीब परिवार की दिल छू लेने वाली कहानी' (vsNormal: 35540.65, 1.5M views)",
+      "topic": "Stepmother mistreatment leading to unexpected billionaire turn / Secret rich husband",
+      "evidence": "Deepfilm's 'सौतेली माँ ने पागल भिखारी से कर दी शादी... लेकिन वो निकला अरबपति! Part 2' (7.6M views) and Part 1 (9.4M views)",
       "strength": 8
-    },
-    {
-      "topic": "Multi-part family drama sagas with heirloom/identity clues (lockets, twin secrets)",
-      "evidence": "U P Story video 'खोई हुई बेटी का लॉकेट और जुड़वाँ भाई का रहस्य (भाग 2)' maintaining strong retention across episodes",
-      "strength": 7
     }
   ],
   "gaps": [
-    "Realistic, Premchand-style grounded rural social dramas without reliance on exaggerated 'secret billionaire' tropes",
-    "Deeply layered stories focusing on the resilient abandoned wife taking independent moral/legal revenge rather than waiting for a heroic husband to return",
-    "Nuanced multi-generational family conflicts exploring modern urban vs traditional rural values beyond simple villainy"
+    "Realistic, grounded Hindi literary dramas (Premchand-style) focusing on moral dilemma and genuine emotional depth instead of sensational 'secret billionaire' tropes.",
+    "Complex story arcs focusing on father-son or brother relationships rather than exclusively daughter-in-law vs mother-in-law conflict.",
+    "Well-crafted multi-part serialized narrative resolutions that do not rely on sudden status leaps (e.g. becoming an IAS/DM overnight)."
   ],
   "saturated": [
-    "Generic 'Beggar husband is secretly a billionaire' (भिखारी बना पति निकला अरबों का वारिस) cloned across multiple small channels",
-    "Overused 'disrespected at airport/restaurant -> turns out to be SDM/Boss' (showing up in weakest videos like U P Story's waiter to SDM concept)",
-    "English-titled or fantasy/giant-creature shorts mixed into Hindi drama channels"
+    "Cruel stepmother kicking daughter/wife out of the house in the middle of the night (सौतेली माँ ने घर से निकाला).",
+    "Forced marriage to a 'crazy beggar' who secretly turns out to be a billionaire (पागल भिखारी निकला अरबपति).",
+    "Police/Daroga wife divorcing unemployed husband who returns as SP/DM years later."
   ],
   "title_patterns": [
-    "[Cruel Action by Family] + [Unexpected Return/Event] + [Shock/Emotional Hook] (e.g., 'बारिश में गर्भवती बहु को घर से निकाला, तभी अचानक लौट आया बेटा... फिर जो हुआ! 😱💔')",
-    "[Underestimation/Disrespect] + [Secret Status Revealed] + [Emotional Drama Tag] (e.g., 'गरीब समझकर सबने किया अपमान 😢 अर्जुन निकला असली DM | दिल छू लेने वाली कहानी')",
-    "[Betrayal Premise] + [Identity Secret Twist] + [Part Indicator] (e.g., 'सौतेली माँ ने भिखारी से करा दी शादी, पर वो निकला अरबपति का बेटा!')"
+    "[Insult Event at humble location] + [Character becomes SDM/DM/Billionaire] + [Demands accountability/Village cries] + 😭💔",
+    "[Cruel relative action] + फिर [Unexpected twist/Husband's reaction] + [Emotional Story/Part X]",
+    "[Series Name] ❤️ | Episode [N] | [Romantic/Family Genre Tag] | [Core Conflict]"
   ]
 }
