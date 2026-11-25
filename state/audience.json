@@ -1,42 +1,47 @@
 {
-  "at": "2026-11-24T03:59:40.207Z",
+  "at": "2026-11-25T02:34:05.999Z",
   "channels": [
-    "Kahaniyon Ka Safar",
-    "M4 CREATIONS ",
-    "Coov Records Official",
-    "Deepfilm",
-    "AI Kanchan "
+    "FaKT Dharmik Katha",
+    "Arooj Narrate",
+    "Fictional Studio TV",
+    "GK Hindi Stories 1m",
+    "Drama Basti"
   ],
   "wants": [
     {
-      "topic": "Underdog Revenge & Status Elevation (Insulted family member returns as high officer/SDM/DM to demand accountability)",
-      "evidence": "AI Kanchan's 'ईंट-भट्टे पर माँ का अपमान, बेटी बनी SDM' (242.58x vsNormal) and 'DM पति ने लौटकर ऐसा किया' (56.71x vsNormal)",
+      "topic": "Hidden status / billionaire beggar marrying mistreated stepdaughter",
+      "evidence": "Arooj Narrate (vsNormal 143.06x, 89.35x, 62.66x) and Drama Basti (vsNormal 27.08x, 3.99x) titles showing massive viral spikes when stepmothers marry daughters off to beggars who hold secret identities.",
       "strength": 10
     },
     {
-      "topic": "Romantic post-marriage drama / Episodic serials on love after marriage",
-      "evidence": "M4 CREATIONS' 'Marriage Melodies Episode 1' (10.9x vsNormal) and Episode 4 (10.84x vsNormal)",
+      "topic": "Fateful stormy night / acts of kindness bridging class divides",
+      "evidence": "GK Hindi Stories 1m achieved 886.31x normal performance on 'poor girl giving water to thirsty traveler' and 90.03x on 'millionaire widow inviting shepherd on stormy night'.",
       "strength": 9
     },
     {
-      "topic": "Stepmother mistreatment leading to unexpected billionaire turn / Secret rich husband",
-      "evidence": "Deepfilm's 'सौतेली माँ ने पागल भिखारी से कर दी शादी... लेकिन वो निकला अरबपति! Part 2' (7.6M views) and Part 1 (9.4M views)",
+      "topic": "Arrogant Zamindar / Royal authority humbled by pure rural love or mysterious talent",
+      "evidence": "Fictional Studio TV achieved 10.7x normal views on '100th night princess room' and high engagement on Zamindar pride shattered by flute/earth love stories.",
+      "strength": 8
+    },
+    {
+      "topic": "Direct cliffhanger continuations (Part 2 / Part 3) of forced betrothals",
+      "evidence": "Drama Basti generated 3.2M views on 'PART 2' of the stepmother beggar story with 2,318 viewer comments explicitly seeking resolution.",
       "strength": 8
     }
   ],
   "gaps": [
-    "Realistic, grounded Hindi literary dramas (Premchand-style) focusing on moral dilemma and genuine emotional depth instead of sensational 'secret billionaire' tropes.",
-    "Complex story arcs focusing on father-son or brother relationships rather than exclusively daughter-in-law vs mother-in-law conflict.",
-    "Well-crafted multi-part serialized narrative resolutions that do not rely on sudden status leaps (e.g. becoming an IAS/DM overnight)."
+    "Premchand-style grounded village family sagas that offer deep literary emotional resolution instead of pure shock-value sensationalism.",
+    "Stories exploring genuine sacrifice and hidden nobility without relying heavily on modern urban tropes."
   ],
   "saturated": [
-    "Cruel stepmother kicking daughter/wife out of the house in the middle of the night (सौतेली माँ ने घर से निकाला).",
-    "Forced marriage to a 'crazy beggar' who secretly turns out to be a billionaire (पागल भिखारी निकला अरबपति).",
-    "Police/Daroga wife divorcing unemployed husband who returns as SP/DM years later."
+    "Generic 'Showroom insult / humble person teaches lesson to rich salesman' tropes (Drama Basti vsNormal 0.08).",
+    "Standard 'Child returns after 25 years as IAS officer to take revenge' narratives (Drama Basti vsNormal 0.22).",
+    "Generic Aghori / horror room mysteries detached from family/romantic stakes (GK Hindi Stories vsNormal 0.01).",
+    "Routine daily religious adhyay recitations without seasonal festival hooks (FaKT Dharmik Katha vsNormal 0.01)."
   ],
   "title_patterns": [
-    "[Insult Event at humble location] + [Character becomes SDM/DM/Billionaire] + [Demands accountability/Village cries] + 😭💔",
-    "[Cruel relative action] + फिर [Unexpected twist/Husband's reaction] + [Emotional Story/Part X]",
-    "[Series Name] ❤️ | Episode [N] | [Romantic/Family Genre Tag] | [Core Conflict]"
+    "सौतेली माँ ने बेटी को [भिखारी/अपाहिज] के हवाले किया, मगर जब खुला असली राज़... 😱💔",
+    "[गरीब/मुसाफिर] को [बेटी/लड़की] ने पानी पिलाया/मदद की, फिर [तूफानी रात/बड़ा ट्विस्ट]... 😱",
+    "[संख्या] मर्दों के बाद जब [रात/कमरे] में गया... | Emotional Hindi Story"
   ]
 }

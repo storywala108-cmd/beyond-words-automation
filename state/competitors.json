@@ -386,11 +386,11 @@
     },
     "UC3U0Tyty7Xs1jqreX8tU0Qw": {
       "title": "Beete_Panne",
-      "hits": 4,
-      "outlierSum": 72.81,
+      "hits": 5,
+      "outlierSum": 122.81,
       "scannedAt": null,
-      "subs": 763,
-      "lastSeen": "2026-11-14T01:21:01.480Z"
+      "subs": 1160,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
     },
     "UCv2fH7qjvBKoc6v0s2bVVBg": {
       "title": "Hindi Kahaniya",
@@ -434,11 +434,11 @@
     },
     "UCTZDC0fAQWLrmWwzjqTYWNw": {
       "title": "moho entertainment",
-      "hits": 2,
-      "outlierSum": 3.37,
+      "hits": 3,
+      "outlierSum": 4.35,
       "scannedAt": null,
-      "subs": 100000,
-      "lastSeen": "2026-11-14T01:21:01.480Z"
+      "subs": 102000,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
     },
     "UC6sXkLq-kBPD5vk5Z7Z6ltg": {
       "title": "Story Suno",
@@ -812,7 +812,7 @@
       "title": "Fictional Studio TV",
       "hits": 2,
       "outlierSum": 100,
-      "scannedAt": "2026-11-19T00:26:59.138Z",
+      "scannedAt": "2026-11-25T02:33:35.432Z",
       "subs": 64300,
       "lastSeen": "2026-11-19T00:26:58.181Z"
     },
@@ -820,7 +820,7 @@
       "title": "GK Hindi Stories 1m",
       "hits": 3,
       "outlierSum": 150,
-      "scannedAt": "2026-11-19T00:26:59.759Z",
+      "scannedAt": "2026-11-25T02:33:35.943Z",
       "subs": 28400,
       "lastSeen": "2026-11-19T00:26:58.181Z"
     },
@@ -828,7 +828,7 @@
       "title": "Arooj Narrate",
       "hits": 2,
       "outlierSum": 100,
-      "scannedAt": "2026-11-19T00:26:58.877Z",
+      "scannedAt": "2026-11-25T02:33:35.117Z",
       "subs": 20600,
       "lastSeen": "2026-11-14T01:21:01.480Z"
     },
@@ -852,7 +852,7 @@
       "title": "Drama Basti",
       "hits": 2,
       "outlierSum": 100,
-      "scannedAt": "2026-11-19T00:27:00.047Z",
+      "scannedAt": "2026-11-25T02:33:36.220Z",
       "subs": 25100,
       "lastSeen": "2026-11-18T01:00:07.842Z"
     },
@@ -946,11 +946,11 @@
     },
     "UCw_7vl9r4wxxm22T0nyPs2w": {
       "title": "EasyLearningTre-Junior",
-      "hits": 1,
-      "outlierSum": 0.1,
+      "hits": 3,
+      "outlierSum": 0.12,
       "scannedAt": null,
-      "subs": 99600,
-      "lastSeen": "2026-11-14T01:21:01.480Z"
+      "subs": 99700,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
     },
     "UCzQ2A7-Qip_gv8PeuqVRu_A": {
       "title": "Anaya Story World",
@@ -1356,7 +1356,7 @@
       "title": "FaKT Dharmik Katha",
       "hits": 1,
       "outlierSum": 50,
-      "scannedAt": "2026-11-19T00:26:58.582Z",
+      "scannedAt": "2026-11-25T02:33:34.743Z",
       "subs": 23100,
       "lastSeen": "2026-11-19T00:26:58.181Z"
     },
@@ -1943,6 +1943,142 @@
       "scannedAt": null,
       "subs": 5560,
       "lastSeen": "2026-11-24T03:59:11.460Z"
+    },
+    "UCnAxlXym2KE4ljDMjZ6APIw": {
+      "title": "Ssoftoons Hanste Raho",
+      "hits": 1,
+      "outlierSum": 0.05,
+      "scannedAt": null,
+      "subs": 2100000,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCXKopT8rgMju0gXjqQ6Z1Dw": {
+      "title": "Kathakalp",
+      "hits": 2,
+      "outlierSum": 1.3599999999999999,
+      "scannedAt": null,
+      "subs": 6370,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCNZnK6NfDQ9VM5prellZhPw": {
+      "title": "SyllabuswithRohit ",
+      "hits": 1,
+      "outlierSum": 0.12,
+      "scannedAt": null,
+      "subs": 334000,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCRpuJmLcg-yS0FFUKeZWnzw": {
+      "title": "Swami Rajeshwaranand Saraswati Ji Maharaj",
+      "hits": 1,
+      "outlierSum": 0.06,
+      "scannedAt": null,
+      "subs": 547000,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UC-QQnNWmlXPClN3CpLsouRQ": {
+      "title": "Dream Planet TV Daredevils",
+      "hits": 1,
+      "outlierSum": 0.49,
+      "scannedAt": null,
+      "subs": 13500,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCqCGuK2b4jyAIAzkJ7UqM4w": {
+      "title": "Career Guide UP Board",
+      "hits": 1,
+      "outlierSum": 1.54,
+      "scannedAt": null,
+      "subs": 1170,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCtLGmZQmQIKHrHDqMYbK2bw": {
+      "title": "THE SERIOUS COMEDY SHOW",
+      "hits": 1,
+      "outlierSum": 0.19,
+      "scannedAt": null,
+      "subs": 9310,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCX2RNuUlXmYQwqPTdN0d7Cg": {
+      "title": "Comedy & Funny Story ",
+      "hits": 1,
+      "outlierSum": 1.04,
+      "scannedAt": null,
+      "subs": 31,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCqUvwlMnlse2Xlg8Lo6_how": {
+      "title": "कहानी सुनो वैष्णवी से ",
+      "hits": 1,
+      "outlierSum": 0.61,
+      "scannedAt": null,
+      "subs": 71,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCc9l2xWeDO26Q113RmVoHxA": {
+      "title": "LOLNova",
+      "hits": 1,
+      "outlierSum": 0.64,
+      "scannedAt": null,
+      "subs": 70,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCiDpoX1H2mwtu06psw1HfrQ": {
+      "title": "Shivam Study Knowledge",
+      "hits": 1,
+      "outlierSum": 0.01,
+      "scannedAt": null,
+      "subs": 148000,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCt-rne0XpLhTMosdMsKJaiA": {
+      "title": "BRILLIANT SCIENCE ACADEMY 2.O",
+      "hits": 1,
+      "outlierSum": 0.23,
+      "scannedAt": null,
+      "subs": 1280,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UC6vvoLbVVrZx83l_IPSALAQ": {
+      "title": "Lok Kathayein Hindi ",
+      "hits": 1,
+      "outlierSum": 0.41,
+      "scannedAt": null,
+      "subs": 10,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCVPeP5luILa-gk6MTQTzx2Q": {
+      "title": "Voice & Verse by Navneet",
+      "hits": 1,
+      "outlierSum": 0.28,
+      "scannedAt": null,
+      "subs": 33,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCfYDmF7dsxfsSryDyJ7-cAw": {
+      "title": "Suniye Kahaniyan Mere Sath",
+      "hits": 2,
+      "outlierSum": 0.30000000000000004,
+      "scannedAt": null,
+      "subs": 324,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UCY9fc5OOEoqa2-cNN77dNNw": {
+      "title": " Up Wale Kaka Teem Shravasti ",
+      "hits": 1,
+      "outlierSum": 0.23,
+      "scannedAt": null,
+      "subs": 134,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
+    },
+    "UC6OoRUOXeZkJ9BiD3SixOrA": {
+      "title": "साहित्य सरिता ",
+      "hits": 1,
+      "outlierSum": 0.07,
+      "scannedAt": null,
+      "subs": 46,
+      "lastSeen": "2026-11-25T02:33:34.286Z"
     }
   }
 }
