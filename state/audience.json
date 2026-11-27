@@ -1,47 +1,46 @@
 {
-  "at": "2026-11-25T02:34:05.999Z",
+  "at": "2026-11-27T01:47:03.076Z",
   "channels": [
-    "FaKT Dharmik Katha",
-    "Arooj Narrate",
-    "Fictional Studio TV",
-    "GK Hindi Stories 1m",
-    "Drama Basti"
+    "Story By Ansar Hindi ",
+    "U P Story",
+    "AI Story Tool",
+    "Toons Online",
+    "TOON VANI"
   ],
   "wants": [
     {
-      "topic": "Hidden status / billionaire beggar marrying mistreated stepdaughter",
-      "evidence": "Arooj Narrate (vsNormal 143.06x, 89.35x, 62.66x) and Drama Basti (vsNormal 27.08x, 3.99x) titles showing massive viral spikes when stepmothers marry daughters off to beggars who hold secret identities.",
-      "strength": 10
-    },
-    {
-      "topic": "Fateful stormy night / acts of kindness bridging class divides",
-      "evidence": "GK Hindi Stories 1m achieved 886.31x normal performance on 'poor girl giving water to thirsty traveler' and 90.03x on 'millionaire widow inviting shepherd on stormy night'.",
+      "topic": "Beggar/Poor Husband revealed as secret billionaire heir after forced marriage",
+      "evidence": "U P Story's 'सौतेली माँ ने भिखारी से करा दी शादी, पर वो निकला अरबपति का बेटा!' (15.12x vs normal) and Part 1 (5.92x vs normal).",
       "strength": 9
     },
     {
-      "topic": "Arrogant Zamindar / Royal authority humbled by pure rural love or mysterious talent",
-      "evidence": "Fictional Studio TV achieved 10.7x normal views on '100th night princess room' and high engagement on Zamindar pride shattered by flute/earth love stories.",
+      "topic": "Husband/Partner sacrifice repaid with brutal post-success betrayal",
+      "evidence": "Story By Ansar's 'मजदूरी करके पति ने पत्नी को बनाया DM, फिर उसी ने दे दिया तलाक' (4.63x vs normal) and AI Story Tool's 'जिसने बुरे वक्त में साथ दिया, उसे ही अमीर बनकर ठुकरा दिया' (3.51x vs normal).",
       "strength": 8
     },
     {
-      "topic": "Direct cliffhanger continuations (Part 2 / Part 3) of forced betrothals",
-      "evidence": "Drama Basti generated 3.2M views on 'PART 2' of the stepmother beggar story with 2,318 viewer comments explicitly seeking resolution.",
+      "topic": "Son returning from city discovering neglected/suffering elderly parents",
+      "evidence": "AI Story Tool's top video 'शहर से लौटते ही बेटे ने माँ बाप को इस हालत मे देखकर लिया बड़ा फैशला' achieved 17.63x channel median view rate.",
+      "strength": 10
+    },
+    {
+      "topic": "Arrogant wealthy partner humbled by poor protagonist's self-respect",
+      "evidence": "Story By Ansar's 'घमंडी राजकुमार और गरीब बंजारन की कहानी' generated 12.44x normal views.",
       "strength": 8
     }
   ],
   "gaps": [
-    "Premchand-style grounded village family sagas that offer deep literary emotional resolution instead of pure shock-value sensationalism.",
-    "Stories exploring genuine sacrifice and hidden nobility without relying heavily on modern urban tropes."
+    "Nuanced emotional resolution showing long-term consequences of spousal betrayal rather than abrupt shock cliffhangers.",
+    "Realistic, grounded rural family drama in classic Premchand style without overused 'SDM officer' or 'airport humiliation' tropes."
   ],
   "saturated": [
-    "Generic 'Showroom insult / humble person teaches lesson to rich salesman' tropes (Drama Basti vsNormal 0.08).",
-    "Standard 'Child returns after 25 years as IAS officer to take revenge' narratives (Drama Basti vsNormal 0.22).",
-    "Generic Aghori / horror room mysteries detached from family/romantic stakes (GK Hindi Stories vsNormal 0.01).",
-    "Routine daily religious adhyay recitations without seasonal festival hooks (FaKT Dharmik Katha vsNormal 0.01)."
+    "Revenge tropes where a slapped waiter or dumped bride returns years later as an SDM/DM (performing down to 0.04x - 0.11x vs normal).",
+    "Public humiliation at airports/malls due to poor clothing (performing at 0.02x vs normal).",
+    "Dark skin tone discrimination by stepmothers resulting in immediate beggar marriage without emotional depth."
   ],
   "title_patterns": [
-    "सौतेली माँ ने बेटी को [भिखारी/अपाहिज] के हवाले किया, मगर जब खुला असली राज़... 😱💔",
-    "[गरीब/मुसाफिर] को [बेटी/लड़की] ने पानी पिलाया/मदद की, फिर [तूफानी रात/बड़ा ट्विस्ट]... 😱",
-    "[संख्या] मर्दों के बाद जब [रात/कमरे] में गया... | Emotional Hindi Story"
+    "[Extreme Sacrificial Act] + [Shocking Betrayal/Divorce Outcome]",
+    "[Forced Marriage to Supposed Beggar] + [Hidden Billionaire Identity Reveal]",
+    "[Return to Native Place] + [Discovering Miserable Parental Condition] + [Drastic Decision Trigger]"
   ]
 }
